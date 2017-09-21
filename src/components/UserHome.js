@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import 'semantic-ui-css/semantic.min.css';
 
 class UserHome extends React.Component {
   state = {
@@ -8,10 +9,10 @@ class UserHome extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/user/show')
-    .then(res => res.json()).then(res => this.setState({
-      user: res.user
-    }))
+    // fetch('http://localhost:3000/api/v1/user/show')
+    // .then(res => res.json()).then(res => this.setState({
+    //   user: res.user
+    // }))
   }
 
   handleClick = () => {
@@ -21,7 +22,7 @@ class UserHome extends React.Component {
   }
 
   render() {
-    console.log(this.state.user)
+    console.log(this.props.location.search.split("=")[1])
     return (
       <div>
         <h1>Successfull Login through Spotify</h1>
