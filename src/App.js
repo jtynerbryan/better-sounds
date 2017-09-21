@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
+import UserHome from './components/UserHome'
+import Login from './components/Login'
 // import { Header } from 'semantic-ui-react'
 
 // const failureMessage = () => { return <Header as="h1">Something went wrong logging into Spotify...</Header> }
@@ -18,7 +20,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <h4>Spotify Test</h4>
-
+        <Route path='/login' component={Login}/>
+        <Route path='/success' component={UserHome}/>
       </div>
     );
   }
