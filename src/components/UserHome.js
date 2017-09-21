@@ -14,12 +14,9 @@ class UserHome extends React.Component {
   }
 
   handleClick = () => {
-      let header = {
-        Authorization: `Bearer ${this.state.user.access_token}`
-      }
-      console.log(header)
-
-      fetch('https://api.spotify.com/v1/me/top/tracks/', header).then(res => res.json()).then(res => console.log(res))
+    fetch('http://localhost:3000/api/v1/recently_played_tracks')
+    .then(res => res.json())
+    .then(res => console.log(res))
   }
 
   render() {
@@ -35,13 +32,3 @@ class UserHome extends React.Component {
 }
 
 export default UserHome
-
-
-
-
-
-
-//
-//   user_response = RestClient.get("https://api.spotify.com/v1/me", header)
-//
-//   fetch('https://api.spotify.com/v1/me/top/tracks', )
