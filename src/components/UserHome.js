@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { authorize } from '../actions/auth'
+import{ logoutUser } from '../actions/auth'
 import { bindActionCreators } from 'redux'
+import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 
 class UserHome extends React.Component {
@@ -11,19 +13,25 @@ class UserHome extends React.Component {
     this.props.authorize(code)
   }
 
+  handleClick = () => {
+    this.props.logoutUser()
+    this.props.history.push("/")
+  }
+
   render() {
     console.log(this.props)
-    console.log(localStorage)
     return (
       <div className="App">
         <h1>Fetching your Spotify data...</h1>
+        <Button primary onClick={this.handleClick}>Log Out</Button>
+
       </div>
     )
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({authorize}, dispatch)
+  return bindActionCreators({authorize, logoutUser}, dispatch)
 }
 
 function mapStateToProps(state) {

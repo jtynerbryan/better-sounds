@@ -6,7 +6,13 @@ export function authorize(code){
     return fetch(`http://localhost:3000/api/v1/users/create?code=${code}`, body)
     .then(res => res.json())
     .then(res => {
-      console.log("authrize response",res);
-      dispatch({type:"AUTHORIZE", payload: res})})
+      dispatch({type:"AUTHORIZE", payload: res})
+    })
+  }
+}
+
+export function logoutUser() {
+  return (dispatch) => {
+    dispatch({type: 'LOGOUT_USER'})
   }
 }
