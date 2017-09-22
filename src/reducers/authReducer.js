@@ -8,7 +8,12 @@ export default(state = {
 }, action) => {
   switch(action.type) {
     case 'AUTHORIZE':
-      return state
+    console.log("Auth Reducer action",action)
+      localStorage.setItem("jwt", action.payload.jwt)
+      return Object.assign({}, state, {
+        user: action.payload.user,
+        isLoggedIn: true
+      })
     default:
       return state
   }
