@@ -1,15 +1,15 @@
-// function authReducer(state = {
-//   isLoggedIn: false,
-//   user: {
-//     username: null,
-//     id: null,
-//     spotify_url: null,
-//     access_token: null,
-//     refresh_token: null
-//   }
-// }, action) {
-//   default:
-//     return state
-// }
-//
-// export default authReducer
+export default(state = {
+  isLoggedIn: false,
+  user: {
+    username: null,
+    spotify_url: null,
+    id: null
+  }
+}, action) => {
+  switch(action.type) {
+    case 'AUTHORIZE':
+      
+    default:
+      return state
+  }
+}
