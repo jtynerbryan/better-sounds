@@ -5,6 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { createStore, applyMiddleware, combineReducers } from 'redux' // if it’s not provider or connect it comes from redux
 import tracksReducer from './reducers/tracksReducer'
+import authReducer from './reducers/authReducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
