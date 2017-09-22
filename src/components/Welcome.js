@@ -10,6 +10,8 @@ class Welcome extends React.Component {
     return (
       <div className="App">
         <h1>Welcome</h1>
+        <img className="welcome-image"src='./vinyl.svg'/>
+        <br></br>
         <Button primary as="a" href="http://localhost:3000/api/v1/login">Log In</Button>
       </div>
     )
@@ -19,7 +21,8 @@ class Welcome extends React.Component {
 function mapStateToProps(state) {
   return {
     isLoggedIn: state.auth.isLoggedIn,
-    user: state.auth.user
+    user: state.auth.user,
+    topTracks: state.tracks.topTracks
   }
 }
 

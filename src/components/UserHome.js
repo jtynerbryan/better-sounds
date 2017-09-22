@@ -20,14 +20,22 @@ class UserHome extends React.Component {
 
   render() {
     console.log(this.props)
-    return (
-      <div className="App">
+    if (!this.props.isLoggedIn) {
+      return (
+        <div className="App">
         <h1>Fetching your Spotify data...</h1>
-        <Button primary onClick={this.handleClick}>Log Out</Button>
-
-      </div>
-    )
+        </div>
+      )
+    } else {
+      return (
+        <div className="App">
+          <h1>Welcome {this.props.user.username}</h1>
+          <Button primary onClick={this.handleClick}>Log Out</Button>
+        </div>
+      )
+    }
   }
+
 }
 
 function mapDispatchToProps(dispatch) {
