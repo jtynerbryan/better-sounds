@@ -8,7 +8,7 @@ export default(state = {
 }, action) => {
   switch(action.type) {
     case 'AUTHORIZE':
-      
+      return state
     default:
       return state
   }

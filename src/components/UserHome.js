@@ -1,14 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import * as authReducer from '../reducers/authReducer'
+import { bindActionCreators } from 'redux'
 import 'semantic-ui-css/semantic.min.css';
 
 class UserHome extends React.Component {
-  state = {
-    user: '',
-    tracks: []
-  }
 
-  handleClick = () => {
+  componentDidMount() {
     const code = this.props.location.search.split("=")[1]
     const body = {
       method: "POST"
@@ -20,14 +18,25 @@ class UserHome extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div>
-        <h1>Successfull Login through Spotify</h1>
-        <button onClick={this.handleClick}>get user</button>
+      <div className="App">
+        <h1>Fetching your Spotify data...</h1>
       </div>
-
     )
   }
 }
 
-export default UserHome
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(authReducer, dispatch)
+}
+
+function mapStateToProps(state) {
+  console.log("Checking state", state)
+  return {
+    isLoggedIn: state.auth.isLoggedIn,
+    user: state.auth.user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserHome)

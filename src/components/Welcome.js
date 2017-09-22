@@ -1,21 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import * as authReducer from '../reducers/authReducer'
-import { bindActionCreators } from 'redux'
+import { Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
 
 class Welcome extends React.Component {
 
   render() {
     return (
-      <div>
-      Welcome
+      <div className="App">
+        <h1>Welcome</h1>
+        <Button primary as="a" href="http://localhost:3000/api/v1/login">Log In</Button>
       </div>
     )
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(authReducer, dispatch)
-}
 
-export default connect(null, mapDispatchToProps)(Welcome)
+
+export default Welcome
