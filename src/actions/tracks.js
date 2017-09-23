@@ -1,13 +1,25 @@
-export function addTopTracks(tracks) {
-  return {
-    type: "ADD_TOP_TRACKS",
-    payload: tracks
+export function addTopTracks(id) {
+  const body = {
+    method: 'POST'
+  }
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/top_tracks?id=${id}`, body)
+    .then(res => res.json())
+    .then(res => {
+      dispatch({type:"ADD_TOP_TRACKS", payload: res.tracks.items})
+    })
   }
 }
 
-export function addRecentTracks(tracks) {
-  return {
-    type: "ADD_RECENTLY_PLAYED_TRACKS",
-    payload: tracks
+export function addRecentTracks(id) {
+  const body = {
+    method: 'POST'
+  }
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/recently_played_tracks?=${id}`, body)
+    .then(res => res.json())
+    .then(res => {
+      dispatch({type:"ADD_RECENTLY_PLAYED_TRACKS", payload: res.tracks.items})
+    })
   }
 }

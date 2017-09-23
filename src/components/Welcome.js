@@ -10,7 +10,7 @@ class Welcome extends React.Component {
     return (
       <div className="App">
         <h1>Welcome</h1>
-        <img className="welcome-image"src='./vinyl.svg'/>
+        <img className="welcome-image"src='./vinyl.svg' alt="app logo"/>
         <br></br>
         <Button primary as="a" href="http://localhost:3000/api/v1/login">Log In</Button>
       </div>

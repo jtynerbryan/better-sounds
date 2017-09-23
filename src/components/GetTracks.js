@@ -6,6 +6,13 @@ import { addRecentTracks } from '../actions/tracks'
 
 class GetTracks extends React.Component {
 
+  componentDidUpdate() {
+    if (this.props.user.id !== null && this.props.topTracks.length === 0 && this.props.recentTracks.length === 0) {
+      this.props.addTopTracks(this.props.user.id)
+      this.props.addRecentTracks(this.props.user.id)
+    }
+  }
+
   render() {
     console.log(this.props);
     return (
