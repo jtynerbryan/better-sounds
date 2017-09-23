@@ -32,7 +32,8 @@ function mapStateToProps(state) {
     isLoggedIn: state.auth.isLoggedIn,
     user: state.auth.user,
     topTracks: state.tracks.topTracks,
-    recentTracks: state.tracks.recentTracks
+    recentTracks: state.tracks.recentTracks,
+    topTracksAudioFeatures: state.audioFeatures
   }
 }
 

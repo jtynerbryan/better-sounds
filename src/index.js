@@ -6,12 +6,12 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import { createStore, applyMiddleware, combineReducers } from 'redux' // if it’s not provider or connect it comes from redux
 import tracksReducer from './reducers/tracksReducer'
 import authReducer from './reducers/authReducer'
+import audioFeaturesReducer from './reducers/audioFeaturesReducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const rootReducer = combineReducers({auth: authReducer, tracks: tracksReducer})
-
+const rootReducer = combineReducers({auth: authReducer, tracks: tracksReducer, audio_features: audioFeaturesReducer})
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
