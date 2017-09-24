@@ -11,7 +11,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const rootReducer = combineReducers({auth: authReducer, tracks: tracksReducer, audio_features: audioFeaturesReducer})
+const rootReducer = combineReducers({auth: authReducer, tracks: tracksReducer, audioFeatures: audioFeaturesReducer})
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 

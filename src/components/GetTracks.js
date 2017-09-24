@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addTopTracks } from '../actions/tracks'
 import { addRecentTracks } from '../actions/tracks'
+import { addTopTracksAudioFeatures } from '../actions/audioFeatures'
+import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 
 class GetTracks extends React.Component {
 
@@ -24,7 +26,7 @@ class GetTracks extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({addTopTracks, addRecentTracks}, dispatch)
+  return bindActionCreators({addTopTracks, addRecentTracks, addTopTracksAudioFeatures, addRecentTracksAudioFeatures}, dispatch)
 }
 
 function mapStateToProps(state) {
@@ -33,7 +35,8 @@ function mapStateToProps(state) {
     user: state.auth.user,
     topTracks: state.tracks.topTracks,
     recentTracks: state.tracks.recentTracks,
-    topTracksAudioFeatures: state.audioFeatures
+    topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
+    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures
   }
 }
 
