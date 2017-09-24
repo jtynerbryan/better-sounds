@@ -7,7 +7,7 @@ function audioFeaturesReducer(state = {
       return Object.assign({}, state, {
         topTracksAudioFeatures: topFeatures
       })
-    case 'addRecentTracksAudioFeatures':
+    case 'ADD_RECENT_TRACKS_AUDIO_FEATURES':
         const recentFeatures = action.payload
         return Object.assign({}, state, {
           recentTracksAudioFeatures: recentFeatures

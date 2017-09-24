@@ -13,6 +13,14 @@ class GetTracks extends React.Component {
       this.props.addTopTracks(this.props.user.id)
       this.props.addRecentTracks(this.props.user.id)
     }
+
+    if (this.props.topTracks.length > 0 && this.props.topTracksAudioFeatures.length === 0) {
+      this.props.addTopTracksAudioFeatures(this.props.user.id, this.props.topTracks)
+    }
+
+    if (this.props.recentTracks.length > 0 && this.props.recentTracksAudioFeatures.length === 0) {
+      this.props.addRecentTracksAudioFeatures(this.props.user.id, this.props.recentTracks)
+    }
   }
 
   render() {

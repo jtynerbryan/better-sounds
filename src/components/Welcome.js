@@ -22,7 +22,9 @@ function mapStateToProps(state) {
   return {
     isLoggedIn: state.auth.isLoggedIn,
     user: state.auth.user,
-    topTracks: state.tracks.topTracks
+    topTracks: state.tracks.topTracks,
+    topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
+    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures
   }
 }
 
