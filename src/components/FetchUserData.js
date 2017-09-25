@@ -5,6 +5,8 @@ import { addTopTracks } from '../actions/tracks'
 import { addRecentTracks } from '../actions/tracks'
 import { addTopTracksAudioFeatures } from '../actions/audioFeatures'
 import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
+import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
+import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 
 class GetTracks extends React.Component {
 
@@ -21,6 +23,15 @@ class GetTracks extends React.Component {
     if (this.props.recentTracks.length > 0 && this.props.recentTracksAudioFeatures.length === 0) {
       this.props.addRecentTracksAudioFeatures(this.props.user.id, this.props.recentTracks)
     }
+
+    if (this.props.topTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfTopTracks.danceability === 0) {
+      this.props.sumFeaturesOfTopTracks(this.props.topTracksAudioFeatures)
+    }
+
+    // if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
+    //   this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
+    // }
+
   }
 
   render() {
@@ -34,7 +45,7 @@ class GetTracks extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({addTopTracks, addRecentTracks, addTopTracksAudioFeatures, addRecentTracksAudioFeatures}, dispatch)
+  return bindActionCreators({addTopTracks, addRecentTracks, addTopTracksAudioFeatures, addRecentTracksAudioFeatures, sumFeaturesOfTopTracks, sumFeaturesOfRecentTracks}, dispatch)
 }
 
 function mapStateToProps(state) {
@@ -44,7 +55,9 @@ function mapStateToProps(state) {
     topTracks: state.tracks.topTracks,
     recentTracks: state.tracks.recentTracks,
     topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
-    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures
+    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
+    aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
+    aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks
   }
 }
 
