@@ -28,10 +28,9 @@ class GetTracks extends React.Component {
       this.props.sumFeaturesOfTopTracks(this.props.topTracksAudioFeatures)
     }
 
-    // if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
-    //   this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
-    // }
-
+    if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
+      this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
+    }
   }
 
   render() {

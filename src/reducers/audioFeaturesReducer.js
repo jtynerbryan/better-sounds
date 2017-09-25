@@ -39,7 +39,7 @@ function audioFeaturesReducer(state = {
     case 'SET_AGGREGATE_FEATURES_FOR_RECENT_TRACKS':
       const aggregateRecentFeatures = action.payload
       return Object.assign({}, state, {
-        aggregateFeaturesOfTopTracks: aggregateRecentFeatures
+        aggregateFeaturesOfRecentTracks: aggregateRecentFeatures
     })
     default:
       return state
