@@ -34,7 +34,7 @@ class GetTracks extends React.Component {
     }
 
     if (this.props.aggregateFeaturesOfTopTracks.danceability > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability > 0) {
-      this.props.history.push('/audio-features-chart')
+      this.props.history.push('/user-results')
     }
   }
 

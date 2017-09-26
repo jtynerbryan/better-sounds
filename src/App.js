@@ -4,7 +4,8 @@ import './App.css';
 import Login from './components/Login'
 import Welcome from './components/Welcome'
 import FetchUserData from './components/FetchUserData'
-import AggregateFeaturesChart from './components/AggregateFeaturesChart'
+import AudioFeaturesChart from './components/AudioFeaturesChart'
+import UserResults from './components/UserResults'
 // import { Header } from 'semantic-ui-react'
 
 // const failureMessage = () => { return <Header as="h1">Something went wrong logging into Spotify...</Header> }
@@ -16,7 +17,8 @@ class App extends Component {
         <Route exact path='/' component={Welcome}/>
         <Route exact path='/success' component={Login}/>
         <Route exact path='/fetch-user-data' component={FetchUserData}/>
-        <Route exact path='/audio-features-chart' component={AggregateFeaturesChart}/>
+        <Route exact path='/audio-features-chart' component={AudioFeaturesChart}/>
+        <Route exact path='/user-results' component={UserResults}/>
       </div>
     );
   }
