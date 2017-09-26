@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { authorize } from '../actions/auth'
 import{ logoutUser } from '../actions/auth'
 import { bindActionCreators } from 'redux'
-import { Button } from 'semantic-ui-react'
+// import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import Loader from './Loader'
 
