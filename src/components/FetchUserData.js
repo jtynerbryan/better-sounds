@@ -7,6 +7,7 @@ import { addTopTracksAudioFeatures } from '../actions/audioFeatures'
 import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
+import Loader from './Loader'
 
 class GetTracks extends React.Component {
 
@@ -40,8 +41,8 @@ class GetTracks extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div className="App">
-        <h1>Fetching Tracks...</h1>
+      <div id="loader">
+      <Loader />
       </div>
     )
   }

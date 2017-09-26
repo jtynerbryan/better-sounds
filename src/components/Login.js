@@ -5,6 +5,7 @@ import{ logoutUser } from '../actions/auth'
 import { bindActionCreators } from 'redux'
 import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
+import Loader from './Loader'
 
 class UserHome extends React.Component {
 
@@ -29,10 +30,9 @@ class UserHome extends React.Component {
       )
     } else {
       return (
-        <div className="App">
-          <h1>Welcome {this.props.user.username}</h1>
-          <Button primary onClick={this.handleClick}>Log Out</Button>
-        </div>
+
+          <Loader />
+
       )
     }
   }
