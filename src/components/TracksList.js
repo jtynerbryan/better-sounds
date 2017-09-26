@@ -8,8 +8,10 @@ class TracksList extends React.Component {
   render() {
     return (
       <div>
-      <List divided relaxed>
-      {this.props.topTracks.map(track => { <Track />})}
+      <List>
+        {this.props.topTracks.map((track, index) => {
+          return <Track key={index} track={track}/>
+        })}
       </List>
       </div>
     )
