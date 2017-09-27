@@ -8,6 +8,7 @@ import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
+import { addTopArtists } from '../actions/topArtists'
 import Loader from './Loader'
 
 class GetTracks extends React.Component {
@@ -15,12 +16,13 @@ class GetTracks extends React.Component {
   componentDidUpdate() {
     if (this.props.user.id !== null && this.props.topTracks.length === 0 ) {
       this.props.addTopTracks(this.props.user.id)
+      this.props.addTopArtists(this.props.user.id)
       // this.props.addRecentTracks(this.props.user.id)
     }
 
     if (this.props.topTracks.length > 0 && this.props.topTracksAudioFeatures.length === 0) {
       this.props.addTopTracksAudioFeatures(this.props.user.id, this.props.topTracks)
-      this.props.addRelatedArtists(this.props.user.id,this.props.topTracks[1].artists[0].id)
+      // this.props.addRelatedArtists(this.props.user.id,this.props.topTracks[1].artists[0].id)
     }
 
     // if (this.props.recentTracks.length > 0 && this.props.recentTracksAudioFeatures.length === 0) {
@@ -59,7 +61,8 @@ function mapDispatchToProps(dispatch) {
       addRecentTracksAudioFeatures,
       sumFeaturesOfTopTracks,
       sumFeaturesOfRecentTracks,
-      addRelatedArtists
+      addRelatedArtists,
+      addTopArtists
     }, dispatch)
 }
 
@@ -73,7 +76,8 @@ function mapStateToProps(state) {
     recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
     aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks,
-    relatedArtists: state.relatedArtists.relatedArtists
+    relatedArtists: state.relatedArtists.relatedArtists,
+    topArtists: state.topArtists.topArtists
   }
 }
 
