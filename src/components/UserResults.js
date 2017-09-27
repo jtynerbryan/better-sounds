@@ -1,6 +1,6 @@
 import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
-import TracksList from './TracksList'
+import TopTracksList from './TopTracksList'
 import { connect } from 'react-redux'
 import { Button } from 'semantic-ui-react'
 
@@ -34,7 +34,7 @@ class UserResults extends React.Component {
           <h1>{this.props.user.username}s Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
           <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfTopTracks} />
-          <TracksList />
+          <TopTracksList tracks={this.props.topTracks}/>
         </div>
       )
     } else {
@@ -54,6 +54,7 @@ function mapStateToProps(state) {
     isLoggedIn: state.auth.isLoggedIn,
     user: state.auth.user,
     topTracks: state.tracks.topTracks,
+    recentTracks: state.tracks.recentTracks,
     topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
     recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
