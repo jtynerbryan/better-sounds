@@ -44,13 +44,15 @@ class UserResults extends React.Component {
         <div className={"App"}>
           <h1>{this.props.user.username}s Aggregate Audio Features from Recently Played Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
-          <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfRecentTracks} />
-          <RecentTracksList />
+
         </div>
       )
     }
   }
 }
+
+// <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfRecentTracks} />
+// <RecentTracksList />
 
 function mapStateToProps(state) {
   return {

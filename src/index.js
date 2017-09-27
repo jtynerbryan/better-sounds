@@ -7,11 +7,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux' // if itâ€
 import tracksReducer from './reducers/tracksReducer'
 import authReducer from './reducers/authReducer'
 import audioFeaturesReducer from './reducers/audioFeaturesReducer'
+import relatedArtistsReducer from './reducers/relatedArtistsReducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const rootReducer = combineReducers({auth: authReducer, tracks: tracksReducer, audioFeatures: audioFeaturesReducer})
+const rootReducer = combineReducers({auth: authReducer, tracks: tracksReducer, audioFeatures: audioFeaturesReducer, relatedArtists: relatedArtistsReducer})
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
