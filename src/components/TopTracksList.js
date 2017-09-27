@@ -17,7 +17,7 @@ class TopTracksList extends React.Component {
     return (
       <div>
       <List>
-        {mapTracksToFeatures.map(song => <Track song={song}/>)}
+        {mapTracksToFeatures.map((song, index) => <Track key={index} song={song}/>)}
       </List>
       </div>
     )

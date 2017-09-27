@@ -24,7 +24,6 @@ class BarChart extends React.Component {
         }
       ]
     }
-    console.log(this.props)
       return (
         <div className='App'>
         <Bar data={data} options={ {} }/>

@@ -24,7 +24,6 @@ class AudioFeaturesChart extends React.Component {
         }
       ]
     }
-    console.log(this.props)
       return (
         <div className='App'>
         <Doughnut data={data} options={ {} }/>

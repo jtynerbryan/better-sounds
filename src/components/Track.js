@@ -5,7 +5,6 @@ import BarChart from './BarChart'
 class Track extends React.Component {
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <List.Item>
@@ -21,7 +20,7 @@ class Track extends React.Component {
             />
             <Modal.Description>
               <Header>Audio Features</Header>
-              // <BarChart chartData={this.props.song.attributes} style={{ paddingBottom: 5 }}/>
+              <BarChart chartData={this.props.song.attributes} style={{ paddingBottom: 5 }}/>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
