@@ -24,8 +24,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-#loader {
-  height: 100%;
-  width: 100%;
-}
