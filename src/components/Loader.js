@@ -7,10 +7,6 @@ const LoaderExampleText = () => (
     <Dimmer active>
       <Loader size='huge'>Loading</Loader>
     </Dimmer>
-
-    <Image src='/assets/images/wireframe/short-paragraph.png' />
-    <Image src='/assets/images/wireframe/short-paragraph.png' />
-    <Image src='/assets/images/wireframe/short-paragraph.png' />
   </Segment>
   </div>
 )

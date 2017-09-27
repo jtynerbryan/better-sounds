@@ -1,6 +1,6 @@
 import React from 'react';
 import { Divider, Image, Modal, List, Button, Header } from 'semantic-ui-react'
-import BarChart from './BarChart'
+import AudioFeaturesChart from './AudioFeaturesChart'
 
 class Track extends React.Component {
 
@@ -20,7 +20,7 @@ class Track extends React.Component {
             />
             <Modal.Description>
               <Header>Audio Features</Header>
-              <BarChart chartData={this.props.song.attributes} style={{ paddingBottom: 5 }}/>
+              <AudioFeaturesChart chartData={this.props.song.attributes} style={{ paddingBottom: 5 }}/>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
