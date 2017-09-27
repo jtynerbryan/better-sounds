@@ -1,12 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Track from './Track'
+import { List } from 'semantic-ui-react'
+
 
 class RecentTracksList extends React.Component {
 
   render() {
-    console.log(this.props)
+    const mapTracksToFeatures = []
+    this.props.recentTracks.map(song => {
+      let attributes = this.props.recentTracksAudioFeatures.filter(features => features.id === song.track.id)
+      mapTracksToFeatures.push( {
+        info: song.track,
+        attributes: attributes
+      })
+    })
     return (
-      RecentTracksList
+      <div>
+      <List>
+        {mapTracksToFeatures.map((song, index) => <Track key={index} song={song}/>)}
+      </List>
+      </div>
     )
   }
 }
@@ -20,4 +34,4 @@ function mapStateToProps(state) {
 
 }
 
-export default RecentTracksList
+export default connect(mapStateToProps, null)(RecentTracksList)

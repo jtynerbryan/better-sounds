@@ -1,6 +1,7 @@
 import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 import TopTracksList from './TopTracksList'
+import RecentTracksList from './RecentTracksList'
 import { connect } from 'react-redux'
 import { Button } from 'semantic-ui-react'
 
@@ -34,7 +35,7 @@ class UserResults extends React.Component {
           <h1>{this.props.user.username}s Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
           <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfTopTracks} />
-          <TopTracksList tracks={this.props.topTracks}/>
+          <TopTracksList />
         </div>
       )
     } else {
@@ -43,6 +44,7 @@ class UserResults extends React.Component {
           <h1>{this.props.user.username}s Aggregate Audio Features from Recently Played Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
           <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfRecentTracks} />
+          <RecentTracksList />
         </div>
       )
     }
