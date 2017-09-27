@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form, Header } from 'semantic-ui-react'
 
 class PlaylistForm extends React.Component {
 
@@ -19,6 +19,8 @@ class PlaylistForm extends React.Component {
     console.log(this.state);
     const { value } = this.state
     return (
+      <div>
+      <Header>Create your own playlist</Header>
       <Form>
         <Form.Group widths='equal'>
           <Form.Input label='Playlist Name' placeholder='My Playlist' onChange={this.handleTitle} />
@@ -35,6 +37,7 @@ class PlaylistForm extends React.Component {
         </Form.Group>
         <Form.Button>Submit</Form.Button>
       </Form>
+      </div>
     )
   }
 }
