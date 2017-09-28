@@ -2,7 +2,10 @@ import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 import TopTracksList from './TopTracksList'
 import RecentTracksList from './RecentTracksList'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
+import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 import { Button } from 'semantic-ui-react'
 
 
@@ -25,6 +28,17 @@ class UserResults extends React.Component {
       this.setState({
         toggleOn: true
       })
+    }
+  }
+
+  componentDidMount() {
+      const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
+      topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
+  }
+
+  componentDidUpdate() {
+    if (this.props.relatedArtistsTopTracks.length === 50 && this.props.relatedArtistsAudioFeatures.length === 0) {
+      this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
     }
   }
 
@@ -54,6 +68,14 @@ class UserResults extends React.Component {
 // <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfRecentTracks} />
 // <RecentTracksList />
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      addRelatedArtistsTopTracks,
+      addRelatedArtistsAudioFeatures
+    }, dispatch)
+}
+
 function mapStateToProps(state) {
   return {
     isLoggedIn: state.auth.isLoggedIn,
@@ -63,8 +85,12 @@ function mapStateToProps(state) {
     topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
     recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
-    aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks
+    aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks,
+    relatedArtists: state.relatedArtists.relatedArtists,
+    relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
+    topArtists: state.topArtists.topArtists,
+    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks
   }
 }
 
-export default connect(mapStateToProps, null)(UserResults)
+export default connect(mapStateToProps, mapDispatchToProps)(UserResults)

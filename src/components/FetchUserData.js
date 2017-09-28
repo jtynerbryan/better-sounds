@@ -8,7 +8,7 @@ import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
-import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
+
 import { addTopArtists } from '../actions/topArtists'
 
 import Loader from './Loader'
@@ -34,10 +34,13 @@ class GetTracks extends React.Component {
 
     // get a related artist by random from user's top 5 artists
     if (this.props.topArtists.length > 0 && this.props.relatedArtists.length === 0) {
-      debugger
       const topFiveArtists = this.props.topArtists.slice(0, 5)
       const randomtopFiveArtist = topFiveArtists[Math.floor(Math.random() * topFiveArtists.length)]
       this.props.addRelatedArtists(this.props.user.id, randomtopFiveArtist.id)
+    }
+
+    if (this.props.relatedArtists.length > 0 && this.props.topTracksAudioFeatures.length > 0) {
+      this.props.history.push('/user-results')
     }
 
     // if (this.props.aggregateFeaturesOfTopTracks.danceability > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability > 0) {
@@ -50,6 +53,11 @@ class GetTracks extends React.Component {
     // }
     // if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
     //   this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
+    // }
+    // if (this.props.relatedArtists.length > 0 && this.props.relatedArtistsTopTracks.length === 0) {
+    //   const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
+    //   // topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
+    //   this.props.addRelatedArtistsTopTracks(this.props.user)
     // }
 
   }
@@ -74,7 +82,6 @@ function mapDispatchToProps(dispatch) {
       sumFeaturesOfTopTracks,
       sumFeaturesOfRecentTracks,
       addRelatedArtists,
-      addRelatedArtistsTopTracks,
       addTopArtists
     }, dispatch)
 }
