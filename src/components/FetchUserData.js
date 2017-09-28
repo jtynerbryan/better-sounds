@@ -8,7 +8,9 @@ import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
+import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addTopArtists } from '../actions/topArtists'
+
 import Loader from './Loader'
 
 class GetTracks extends React.Component {
@@ -40,6 +42,11 @@ class GetTracks extends React.Component {
     // if (this.props.aggregateFeaturesOfTopTracks.danceability > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability > 0) {
     //   this.props.history.push('/user-results')
     // }
+
+    if (this.props.topArtists.length > 0 && this.props.relatedArtists.length === 0) {
+      this.props.addRelatedArtists(this.props.user.id, this.props.topArtists[0].id)
+    }
+
   }
 
   render() {
@@ -62,6 +69,7 @@ function mapDispatchToProps(dispatch) {
       sumFeaturesOfTopTracks,
       sumFeaturesOfRecentTracks,
       addRelatedArtists,
+      addRelatedArtistsTopTracks,
       addTopArtists
     }, dispatch)
 }
@@ -77,7 +85,8 @@ function mapStateToProps(state) {
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
     aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks,
     relatedArtists: state.relatedArtists.relatedArtists,
-    topArtists: state.topArtists.topArtists
+    topArtists: state.topArtists.topArtists,
+    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks
   }
 }
 

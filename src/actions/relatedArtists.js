@@ -11,3 +11,17 @@ export function addRelatedArtists(user_id,artist_id) {
     })
   }
 }
+
+export function addRelatedArtistsTopTracks(user_id,artist_id) {
+  const body = {
+    method: 'POST'
+  }
+
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/related_artists_top_tracks?user_id=${user_id}&artist_id=${artist_id}`, body)
+    .then(res => res.json())
+    .then(res => {
+      dispatch({type: "ADD_RELATED_ARTISTS", payload: res.top_tracks.tracks})
+    })
+  }
+}

@@ -7,6 +7,11 @@ function relatedArtistsReducer(state = {
       return Object.assign({}, state, {
         relatedArtists: action.payload
       })
+    case 'ADD_RELATED_ARTISTS_TOP_TRACKS':
+        debugger
+        return Object.assign({}, state, {
+          relatedArtistsTopTracks: state.relatedArtistsTopTracks.concat(action.payload)
+        })
     default:
       return state
   }

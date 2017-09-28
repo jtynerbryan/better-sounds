@@ -1,5 +1,4 @@
 export function addTopArtists(user_id) {
-  debugger
   const body = {
     method: 'POST'
   }
