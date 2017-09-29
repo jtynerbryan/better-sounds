@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
+import { logoutUser } from '../actions/auth'
 import { Button } from 'semantic-ui-react'
 
 
@@ -31,6 +32,17 @@ class UserResults extends React.Component {
     }
   }
 
+  logout = () => {
+    this.props.logoutUser()
+    this.props.history.push('/')
+  }
+
+  componentWillMount() {
+    if (!this.props.isLoggedIn) {
+      this.props.history.push('/')
+    }
+  }
+
   componentDidMount() {
       const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
       topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
@@ -43,12 +55,13 @@ class UserResults extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     if (!this.state.toggleOn) {
       return (
         <div className="App">
           <h1>{this.props.user.username}s Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
+          <Button onClick={this.logout}>Log Out</Button>
           <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfTopTracks} />
           <TopTracksList />
         </div>
@@ -66,14 +79,12 @@ class UserResults extends React.Component {
   }
 }
 
-// <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfRecentTracks} />
-// <RecentTracksList />
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       addRelatedArtistsTopTracks,
-      addRelatedArtistsAudioFeatures
+      addRelatedArtistsAudioFeatures,
+      logoutUser
     }, dispatch)
 }
 

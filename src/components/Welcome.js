@@ -6,6 +6,7 @@ import 'semantic-ui-css/semantic.min.css';
 class Welcome extends React.Component {
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <h1>Welcome</h1>

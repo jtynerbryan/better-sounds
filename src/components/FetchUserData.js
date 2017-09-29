@@ -15,6 +15,14 @@ import Loader from './Loader'
 
 class GetTracks extends React.Component {
 
+  componentDidMount() {
+    setTimeout(function(){
+      if (!this.props.isLoggedIn) {
+        this.props.history.push('/')
+      };
+    }.bind(this), 3000);
+  }
+
   componentDidUpdate() {
     // get user's top tracks and artists
     if (this.props.user.id !== null && this.props.topTracks.length === 0 ) {
@@ -50,16 +58,10 @@ class GetTracks extends React.Component {
       this.props.addRelatedArtists(this.props.user.id, randomtopFiveArtist.id)
     }
 
+    // if all data has been stored, move to user's results view
     if (this.props.relatedArtists.length > 0 && this.props.topTracksAudioFeatures.length > 0 && this.props.recentTracksAudioFeatures.length > 0) {
       this.props.history.push('/user-results')
     }
-
-
-    // if (this.props.relatedArtists.length > 0 && this.props.relatedArtistsTopTracks.length === 0) {
-    //   const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
-    //   // topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
-    //   this.props.addRelatedArtistsTopTracks(this.props.user)
-    // }
 
   }
 

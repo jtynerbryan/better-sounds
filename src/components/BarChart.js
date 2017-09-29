@@ -26,7 +26,7 @@ class BarChart extends React.Component {
     }
       return (
         <div className='App'>
-        <Bar data={data} options={ {} }/>
+        <Bar data={data} width={500} height={500} options={ maintainAspectRatio: false} }/>
       </div>
       )
   }

@@ -1,5 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import bindActionCreators from 'redux'
 import { Form, Header } from 'semantic-ui-react'
+
 
 class PlaylistForm extends React.Component {
 
@@ -15,13 +18,25 @@ class PlaylistForm extends React.Component {
     })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    if (this.state.playlistTitle === '' || this.state.value === '') {
+      alert("Hey you")
+    }
+  }
+
+  componentWillMount() {
+    if (!this.props.isLoggedIn) {
+      this.props.history.push('/')
+    }
+  }
+
   render() {
-    console.log(this.state);
     const { value } = this.state
     return (
       <div>
       <Header>Create your own playlist</Header>
-      <Form>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Group widths='equal'>
           <Form.Input label='Playlist Name' placeholder='My Playlist' onChange={this.handleTitle} />
         </Form.Group>
@@ -42,4 +57,11 @@ class PlaylistForm extends React.Component {
   }
 }
 
-export default PlaylistForm
+function mapStateToProps(state) {
+  return {
+    isLoggedIn: state.auth.isLoggedIn
+  }
+}
+
+
+export default connect(mapStateToProps, null)(PlaylistForm)
