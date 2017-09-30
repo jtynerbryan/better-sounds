@@ -55,14 +55,13 @@ class UserResults extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     if (!this.state.toggleOn) {
       return (
         <div className="App">
           <h1>{this.props.user.username}s Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
           <Button onClick={this.logout}>Log Out</Button>
-          <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfTopTracks} />
+          <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
           <TopTracksList />
         </div>
       )
@@ -71,7 +70,8 @@ class UserResults extends React.Component {
         <div className={"App"}>
           <h1>{this.props.user.username}s Aggregate Audio Features from Recently Played Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
-          <AudioFeaturesChart chartData={this.props.aggregateFeaturesOfRecentTracks} />
+          <Button onClick={this.logout}>Log Out</Button>
+          <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
           <RecentTracksList />
         </div>
       )

@@ -20,7 +20,7 @@ class GetTracks extends React.Component {
       if (!this.props.isLoggedIn) {
         this.props.history.push('/')
       };
-    }.bind(this), 3000);
+    }.bind(this), 1000);
   }
 
   componentDidUpdate() {
