@@ -16,7 +16,11 @@ function relatedArtistsReducer(state = {
     case 'ADD_RELATED_ARTISTS_AUDIO_FEATURES':
           return Object.assign({}, state, {
             relatedArtistsAudioFeatures: state.relatedArtistsAudioFeatures.concat(action.payload)
-          })      
+          })
+    case 'MAP_FEATURES_TO_TRACKS':
+          return Object.assign({}, state, {
+            tracksWithFeatures: action.payload
+          })
     default:
       return state
   }

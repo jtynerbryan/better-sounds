@@ -8,8 +8,6 @@ import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
-import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
-import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 
 import { addTopArtists } from '../actions/topArtists'
 
@@ -60,18 +58,8 @@ class GetTracks extends React.Component {
       this.props.addRelatedArtists(this.props.user.id, randomtopFiveArtist.id)
     }
 
-
-    if (this.props.relatedArtists.length === 20 && this.props.relatedArtistsTopTracks.length === 0) {
-      const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
-      topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
-    }
-
-    if (this.props.relatedArtistsTopTracks.length === 50 && this.props.relatedArtistsAudioFeatures.length === 0) {
-      this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
-    }
-
     // if all data has been stored, move to user's results view
-    if (this.props.relatedArtistsAudioFeatures.length === 50) {
+    if (this.props.relatedArtists.length > 0 && this.props.topTracksAudioFeatures.length > 0 && this.props.recentTracksAudioFeatures.length > 0) {
       this.props.history.push('/user-results')
     }
 
@@ -97,9 +85,7 @@ function mapDispatchToProps(dispatch) {
       sumFeaturesOfTopTracks,
       sumFeaturesOfRecentTracks,
       addRelatedArtists,
-      addTopArtists,
-      addRelatedArtistsTopTracks,
-      addRelatedArtistsAudioFeatures,
+      addTopArtists
     }, dispatch)
 }
 

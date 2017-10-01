@@ -3,9 +3,13 @@ import AudioFeaturesChart from './AudioFeaturesChart'
 import TopTracksList from './TopTracksList'
 import RecentTracksList from './RecentTracksList'
 import { bindActionCreators } from 'redux'
+import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
+import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
+import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/auth'
 import { Button } from 'semantic-ui-react'
+
 
 
 
@@ -42,6 +46,23 @@ class UserResults extends React.Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.relatedArtistsTopTracks.length === 0 && this.props.relatedArtistsAudioFeatures.length === 0) {
+      const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
+      topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.relatedArtistsTopTracks.length === 50 && this.props.relatedArtistsAudioFeatures.length === 0) {
+      this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
+    }
+
+    if (this.props.relatedArtistsAudioFeatures.length > 0 && this.props.relatedArtistsTracksWithFeatures.length === 0) {
+      this.props.mapRelatedArtistsFeaturesToTracks(this.props.relatedArtistsTopTracks, this.props.relatedArtistsAudioFeatures)
+    }
+  }
+
   render() {
     console.log(this.props);
     if (!this.state.toggleOn) {
@@ -71,8 +92,10 @@ class UserResults extends React.Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-
-      logoutUser
+      logoutUser,
+      addRelatedArtistsTopTracks,
+      addRelatedArtistsAudioFeatures,
+      mapRelatedArtistsFeaturesToTracks
     }, dispatch)
 }
 
@@ -89,7 +112,8 @@ function mapStateToProps(state) {
     relatedArtists: state.relatedArtists.relatedArtists,
     relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
     topArtists: state.topArtists.topArtists,
-    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks
+    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
+    relatedArtistsTracksWithFeatures: state.relatedArtists.tracksWithFeatures
   }
 }
 
