@@ -1,6 +1,7 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import bindActionCreators from 'redux'
+import { addPlaylist } from '../actions/playlists'
 import { Form, Header } from 'semantic-ui-react'
 
 
@@ -21,7 +22,9 @@ class PlaylistForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     if (this.state.playlistTitle === '' || this.state.value === '') {
-      alert("Hey you")
+      alert("Please enter a title and select and audio feature")
+    } else {
+      this.props.addPlaylist(this.state.playlistTitle, this.props.user.id)
     }
   }
 
@@ -32,6 +35,7 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     const { value } = this.state
     return (
       <div>
@@ -57,11 +61,30 @@ class PlaylistForm extends React.Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      addPlaylist
+    }
+  ,dispatch)
+}
+
 function mapStateToProps(state) {
   return {
-    isLoggedIn: state.auth.isLoggedIn
+    isLoggedIn: state.auth.isLoggedIn,
+    user: state.auth.user,
+    topTracks: state.tracks.topTracks,
+    recentTracks: state.tracks.recentTracks,
+    topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
+    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
+    aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
+    aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks,
+    relatedArtists: state.relatedArtists.relatedArtists,
+    relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
+    topArtists: state.topArtists.topArtists,
+    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks
   }
 }
 
 
-export default connect(mapStateToProps, null)(PlaylistForm)
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistForm)

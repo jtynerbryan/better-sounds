@@ -1362,6 +1362,10 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
+classnames@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.1.5.tgz#9c9a9cea3e2ff3ffd9b575442e3bd86d88dddf3e"
+
 classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
@@ -5258,6 +5262,13 @@ react-scripts@1.0.13:
   optionalDependencies:
     fsevents "1.1.2"
 
+react-viewport-slider@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-viewport-slider/-/react-viewport-slider-0.0.9.tgz#41818a47c21f04c5018b8d8b49aaff8b7dc04cbc"
+  dependencies:
+    classnames "2.1.5"
+    scroll-to-y "git://github.com/daviferreira/scroll-to-y.git"
+
 "react@^15 || ^16", react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
@@ -5648,6 +5659,10 @@ schema-utils@^0.3.0:
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
+
+"scroll-to-y@git://github.com/daviferreira/scroll-to-y.git":
+  version "0.0.1"
+  resolved "git://github.com/daviferreira/scroll-to-y.git#0da7aa1e9b1a70fd886d050278a22e193da51384"
 
 select-hose@^2.0.0:
   version "2.0.0"

@@ -4,10 +4,9 @@ import TopTracksList from './TopTracksList'
 import RecentTracksList from './RecentTracksList'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
-import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 import { logoutUser } from '../actions/auth'
 import { Button } from 'semantic-ui-react'
+
 
 
 class UserResults extends React.Component {
@@ -43,18 +42,8 @@ class UserResults extends React.Component {
     }
   }
 
-  componentDidMount() {
-      const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
-      topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
-  }
-
-  componentDidUpdate() {
-    if (this.props.relatedArtistsTopTracks.length === 50 && this.props.relatedArtistsAudioFeatures.length === 0) {
-      this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
-    }
-  }
-
   render() {
+    console.log(this.props);
     if (!this.state.toggleOn) {
       return (
         <div className="App">
@@ -82,8 +71,7 @@ class UserResults extends React.Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      addRelatedArtistsTopTracks,
-      addRelatedArtistsAudioFeatures,
+
       logoutUser
     }, dispatch)
 }
