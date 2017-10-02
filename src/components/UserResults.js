@@ -48,13 +48,13 @@ class UserResults extends React.Component {
 
   componentDidMount() {
     if (this.props.relatedArtistsTopTracks.length === 0 && this.props.relatedArtistsAudioFeatures.length === 0) {
-      const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
-      topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
+      const topEightRelatedArtists = this.props.relatedArtists.slice(0, 8)
+      topEightRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
     }
   }
 
   componentDidUpdate() {
-    if (this.props.relatedArtistsTopTracks.length === 50 && this.props.relatedArtistsAudioFeatures.length === 0) {
+    if (this.props.relatedArtistsTopTracks.length === 80 && this.props.relatedArtistsAudioFeatures.length === 0) {
       this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
     }
 

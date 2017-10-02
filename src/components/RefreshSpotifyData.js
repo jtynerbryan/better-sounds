@@ -17,19 +17,19 @@ class RefreshSpotifyData extends React.Component {
 
   componentDidMount() {
     if (this.props.topArtists.length > 0 && this.props.relatedArtists.length === 0) {
-      const topFiveArtists = this.props.topArtists.slice(0, 5)
-      const randomtopFiveArtist = topFiveArtists[Math.floor(Math.random() * topFiveArtists.length)]
-      this.props.addRelatedArtists(this.props.user.id, randomtopFiveArtist.id)
+      const topTenArtists = this.props.topArtists.slice(0, 10)
+      const randomtopTenArtist = topTenArtists[Math.floor(Math.random() * topTenArtists.length)]
+      this.props.addRelatedArtists(this.props.user.id, randomtopTenArtist.id)
     }
   }
 
   componentDidUpdate() {
     if (this.props.relatedArtistsTopTracks.length === 0 && this.props.relatedArtistsAudioFeatures.length === 0) {
-      const topFiveRelatedArtists = this.props.relatedArtists.slice(0, 5)
-      topFiveRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
+      const topEightRelatedArtists = this.props.relatedArtists.slice(0, 8)
+      topEightRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
     }
 
-    if (this.props.relatedArtistsTopTracks.length === 50 && this.props.relatedArtistsAudioFeatures.length === 0) {
+    if (this.props.relatedArtistsTopTracks.length === 80 && this.props.relatedArtistsAudioFeatures.length === 0) {
       this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
     }
 

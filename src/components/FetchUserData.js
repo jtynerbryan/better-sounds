@@ -55,9 +55,9 @@ class GetTracks extends React.Component {
 
     // get a related artist by random from user's top 5 artists
     if (this.props.topArtists.length > 0 && this.props.relatedArtists.length === 0) {
-      const topFiveArtists = this.props.topArtists.slice(0, 5)
-      const randomtopFiveArtist = topFiveArtists[Math.floor(Math.random() * topFiveArtists.length)]
-      this.props.addRelatedArtists(this.props.user.id, randomtopFiveArtist.id)
+      const topTenArtists = this.props.topArtists.slice(0, 10)
+      const randomtopTenArtist = topTenArtists[Math.floor(Math.random() * topTenArtists.length)]
+      this.props.addRelatedArtists(this.props.user.id, randomtopTenArtist.id)
     }
 
     // if all data has been stored, move to user's results view
