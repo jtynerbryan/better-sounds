@@ -8,6 +8,7 @@ import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
+import { getPlaylists } from '../actions/playlists'
 
 import { addTopArtists } from '../actions/topArtists'
 
@@ -19,7 +20,9 @@ class GetTracks extends React.Component {
     setTimeout(function(){
       if (!this.props.isLoggedIn) {
         this.props.history.push('/')
-      };
+      } else {
+        this.props.getPlaylists(this.props.user.id)
+      }
     }.bind(this), 2500);
   }
 
@@ -29,8 +32,8 @@ class GetTracks extends React.Component {
       this.props.addTopTracks(this.props.user.id)
       this.props.addRecentTracks(this.props.user.id)
       this.props.addTopArtists(this.props.user.id)
-
     }
+
     // get audio features of top tracks
     if (this.props.topTracks.length > 0 && this.props.topTracksAudioFeatures.length === 0) {
       this.props.addTopTracksAudioFeatures(this.props.user.id, this.props.topTracks)
@@ -85,7 +88,8 @@ function mapDispatchToProps(dispatch) {
       sumFeaturesOfTopTracks,
       sumFeaturesOfRecentTracks,
       addRelatedArtists,
-      addTopArtists
+      addTopArtists,
+      getPlaylists
     }, dispatch)
 }
 
@@ -102,7 +106,8 @@ function mapStateToProps(state) {
     relatedArtists: state.relatedArtists.relatedArtists,
     topArtists: state.topArtists.topArtists,
     relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
-    relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures
+    relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
+    playlists: state.playlists.playlists
   }
 }
 

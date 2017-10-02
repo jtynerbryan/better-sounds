@@ -27,16 +27,29 @@ export function addPlaylist(playlistName, audioFeature, tracks, userId) {
 
   // extract track id's from shuffledTopThirtyTracks
   const trackUrisToSend = shuffledTopThirtyTracks.map(track => "spotify:track:" + track.track.id)
-  debugger
   const body = {
     method: 'POST'
   }
 
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/create_playlist?user_id=${userId}&track_ids=${trackUrisToSend}&playlist_name=${playlistName}`, body)
+    return fetch(`http://localhost:3000/api/v1/create_playlist?user_id=${userId}&track_ids=${trackUrisToSend}&playlist_name=${playlistName} - created by Jesse's App`, body)
     .then(res => res.json())
     .then(res => {
-      dispatch({type: "ADD_PLAYLIST", payload: res})
+      dispatch({type: "ADD_NEW_PLAYLIST", payload: res.playlist})
+    })
+  }
+}
+
+export function getPlaylists(userId) {
+  const body = {
+    method: 'POST'
+  }
+
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/get_playlists?user_id=${userId}`, body)
+    .then(res => res.json())
+    .then(res => {
+      dispatch({type: "GET_PLAYLISTS", payload: res.playlists})
     })
   }
 }

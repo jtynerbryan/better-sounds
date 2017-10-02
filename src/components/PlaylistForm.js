@@ -25,6 +25,7 @@ class PlaylistForm extends React.Component {
       alert("Please enter a title and select and audio feature")
     } else {
       this.props.addPlaylist(this.state.playlistTitle, this.state.value, this.props.relatedArtistsTracksWithFeatures, this.props.user.id )
+      this.props.history.push('/user-results')
     }
   }
 

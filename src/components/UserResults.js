@@ -73,6 +73,7 @@ class UserResults extends React.Component {
           <Button onClick={this.logout}>Log Out</Button>
           <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
           <TopTracksList />
+          <iframe src="https://open.spotify.com/embed?uri=spotify:user:1260967467:playlist:6DgTjbTQ4B7sp9roNJ1HD5" width="300" height="380" frameBorder="0" allowTransparency="true"></iframe>
         </div>
       )
     } else {
@@ -113,7 +114,8 @@ function mapStateToProps(state) {
     relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
     topArtists: state.topArtists.topArtists,
     relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
-    relatedArtistsTracksWithFeatures: state.relatedArtists.tracksWithFeatures
+    relatedArtistsTracksWithFeatures: state.relatedArtists.tracksWithFeatures,
+    playlists: state.playlists.playlists
   }
 }
 
