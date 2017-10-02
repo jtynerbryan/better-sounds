@@ -6,6 +6,7 @@ import Welcome from './components/Welcome'
 import FetchUserData from './components/FetchUserData'
 import UserResults from './components/UserResults'
 import PlaylistForm from './components/PlaylistForm'
+import RefreshSpotifyData from './components/RefreshSpotifyData'
 // import { Header } from 'semantic-ui-react'
 
 // const failureMessage = () => { return <Header as="h1">Something went wrong logging into Spotify...</Header> }
@@ -18,8 +19,8 @@ class App extends Component {
         <Route exact path='/success' component={Login}/>
         <Route exact path='/fetch-user-data' component={FetchUserData}/>
         <Route exact path='/user-results' component={UserResults}/>
-        <Route exact path='/playlist-form'component={PlaylistForm}/>
-
+        <Route exact path='/playlist-form' component={PlaylistForm}/>
+        <Route exact path='/refresh-spotify-data' component={RefreshSpotifyData}/>
       </div>
     );
   }

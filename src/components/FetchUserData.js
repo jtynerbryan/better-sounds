@@ -3,14 +3,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addTopTracks } from '../actions/tracks'
 import { addRecentTracks } from '../actions/tracks'
+import { addTopArtists } from '../actions/topArtists'
 import { addTopTracksAudioFeatures } from '../actions/audioFeatures'
 import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
 import { getPlaylists } from '../actions/playlists'
-
-import { addTopArtists } from '../actions/topArtists'
 
 import Loader from './Loader'
 

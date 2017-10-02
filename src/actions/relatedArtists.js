@@ -58,3 +58,11 @@ export function mapRelatedArtistsFeaturesToTracks(tracks, features) {
     })
   }
 }
+
+export function clearAllRelatedArtistsData() {
+  return (dispatch) => {
+    dispatch({
+      type: 'CLEAR_ALL_RELATED_ARTISTS_DATA'
+    })
+  }
+}

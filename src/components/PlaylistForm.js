@@ -2,6 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addPlaylist } from '../actions/playlists'
+import { clearAllRelatedArtistsData } from '../actions/relatedArtists'
 import { Form, Header } from 'semantic-ui-react'
 
 
@@ -24,8 +25,9 @@ class PlaylistForm extends React.Component {
     if (this.state.playlistTitle === '' || !this.state.value) {
       alert("Please enter a title and select and audio feature")
     } else {
-      this.props.addPlaylist(this.state.playlistTitle, this.state.value, this.props.relatedArtistsTracksWithFeatures, this.props.user.id )
-      this.props.history.push('/user-results')
+      this.props.addPlaylist(this.state.playlistTitle, this.state.value, this.props.relatedArtistsTracksWithFeatures, this.props.user.id)
+      this.props.clearAllRelatedArtistsData()
+      this.props.history.push('/refresh-spotify-data')
     }
   }
 
@@ -64,7 +66,8 @@ class PlaylistForm extends React.Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      addPlaylist
+      addPlaylist,
+      clearAllRelatedArtistsData
     }
   ,dispatch)
 }

@@ -10,17 +10,24 @@ function relatedArtistsReducer(state = {
         relatedArtists: action.payload
       })
     case 'ADD_RELATED_ARTISTS_TOP_TRACKS':
-        return Object.assign({}, state, {
-          relatedArtistsTopTracks: state.relatedArtistsTopTracks.concat(action.payload)
-        })
+      return Object.assign({}, state, {
+        relatedArtistsTopTracks: state.relatedArtistsTopTracks.concat(action.payload)
+      })
     case 'ADD_RELATED_ARTISTS_AUDIO_FEATURES':
-          return Object.assign({}, state, {
-            relatedArtistsAudioFeatures: state.relatedArtistsAudioFeatures.concat(action.payload)
-          })
+      return Object.assign({}, state, {
+        relatedArtistsAudioFeatures: state.relatedArtistsAudioFeatures.concat(action.payload)
+      })
     case 'MAP_FEATURES_TO_TRACKS':
-          return Object.assign({}, state, {
-            tracksWithFeatures: action.payload
-          })
+      return Object.assign({}, state, {
+        tracksWithFeatures: action.payload
+      })
+    case 'CLEAR_ALL_RELATED_ARTISTS_DATA':
+      return Object.assign({}, state, {
+        relatedArtists: [],
+        relatedArtistsTopTracks: [],
+        relatedArtistsAudioFeatures: [],
+        tracksWithFeatures: []
+      })
     default:
       return state
   }
