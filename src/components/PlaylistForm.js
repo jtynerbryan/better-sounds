@@ -21,10 +21,10 @@ class PlaylistForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (this.state.playlistTitle === '' || this.state.value === '') {
+    if (this.state.playlistTitle === '' || !this.state.value) {
       alert("Please enter a title and select and audio feature")
     } else {
-      this.props.addPlaylist(this.state.playlistTitle, this.props.user.id)
+      this.props.addPlaylist(this.state.playlistTitle, this.state.value, this.props.relatedArtistsTracksWithFeatures, this.props.user.id )
     }
   }
 
@@ -48,7 +48,6 @@ class PlaylistForm extends React.Component {
           <label>Choose an audio feature to be the theme of your playlist</label>
           <Form.Radio label='Danceablity' value='danceability' checked={value === 'danceability'} onChange={this.handleChange} />
           <Form.Radio label='Energy' value='energy' checked={value === 'energy'} onChange={this.handleChange} />
-          <Form.Radio label='Speechiness' value='speechiness' checked={value === 'speechiness'} onChange={this.handleChange} />
           <Form.Radio label='Acousticness' value='acousticness' checked={value === 'acousticness'} onChange={this.handleChange} />
           <Form.Radio label='Instrumentalness' value='instrumentalness' checked={value === 'instrumentalness'} onChange={this.handleChange} />
           <Form.Radio label='Liveness' value='liveness' checked={value === 'liveness'} onChange={this.handleChange} />
@@ -82,7 +81,9 @@ function mapStateToProps(state) {
     relatedArtists: state.relatedArtists.relatedArtists,
     relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
     topArtists: state.topArtists.topArtists,
-    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks
+    relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
+    relatedArtistsTracksWithFeatures: state.relatedArtists.tracksWithFeatures,
+    playlists: state.playlists.playlists
   }
 }
 

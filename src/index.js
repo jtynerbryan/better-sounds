@@ -9,6 +9,7 @@ import authReducer from './reducers/authReducer'
 import audioFeaturesReducer from './reducers/audioFeaturesReducer'
 import relatedArtistsReducer from './reducers/relatedArtistsReducer'
 import topArtistsReducer from './reducers/topArtistsReducer'
+import playlistReducer from './reducers/playlistReducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -19,7 +20,8 @@ const appReducer = combineReducers({
   tracks: tracksReducer,
   audioFeatures: audioFeaturesReducer,
   relatedArtists: relatedArtistsReducer,
-  topArtists: topArtistsReducer
+  topArtists: topArtistsReducer,
+  playlists: playlistReducer
 })
 
 const rootReducer = (state, action) => {
