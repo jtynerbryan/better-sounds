@@ -10,9 +10,6 @@ import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
 import { getPlaylists } from '../actions/playlists'
-
-import Loader from './Loader'
-
 class GetTracks extends React.Component {
 
   componentDidMount() {
@@ -68,10 +65,10 @@ class GetTracks extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+
     return (
-      <div>
-      <h1>Loading your spotify data...</h1>
+      <div className="loader">
+
       </div>
     )
   }

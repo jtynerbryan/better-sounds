@@ -1,21 +1,28 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { withRouter } from 'react-router'
 import { Menu, Segment } from 'semantic-ui-react'
 
-export default class HomeNavBar extends Component {
-  state = { activeItem: 'home' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+class HomeNavBar extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  }
+
 
   render() {
-    const { activeItem } = this.state
     return (
       <Segment inverted className="navbar">
         <Menu inverted pointing secondary>
-          <Menu.Item name='Home' active={activeItem === 'home'} onClick={this.handleItemClick} href="http://localhost:3001/"/>
-          <Menu.Item name='Login' active={activeItem === 'messages'} onClick={this.handleItemClick} href="http://localhost:3000/api/v1/login"/>
-          <Menu.Item name='About' active={activeItem === 'messages'} onClick={this.handleItemClick} />
+          <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
+          <Menu.Item name='Login' href='http://localhost:3000/api/v1/login'/>
+          <Menu.Item name='About' />
         </Menu>
       </Segment>
     )
   }
 }
+
+export default withRouter(HomeNavBar)

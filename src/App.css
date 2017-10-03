@@ -23,12 +23,21 @@
 }*/
 
 .welcome {
-  background-color: ;
+  background-image: url("./headphones-2557583_1920.jpg");
   height: 100vh;
+}
+
+.welcome-header {
+  margin-top: 250px;
+  color: white;
 }
 
 .welcome-image {
   max-width: 40%;
   max-height: 40%;
   align-content: center;
+}
+
+.ui.inverted.segment, .ui.primary.inverted.segment {
+  border-radius: 0px;
 }

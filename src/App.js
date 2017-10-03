@@ -7,9 +7,6 @@ import FetchUserData from './components/FetchUserData'
 import UserResults from './components/UserResults'
 import PlaylistForm from './components/PlaylistForm'
 import RefreshSpotifyData from './components/RefreshSpotifyData'
-// import { Header } from 'semantic-ui-react'
-
-// const failureMessage = () => { return <Header as="h1">Something went wrong logging into Spotify...</Header> }
 
 class App extends Component {
   render() {

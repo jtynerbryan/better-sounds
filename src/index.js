@@ -12,7 +12,6 @@ import topArtistsReducer from './reducers/topArtistsReducer'
 import playlistReducer from './reducers/playlistReducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension';
 import persistState from 'redux-localstorage'
 import 'semantic-ui-css/semantic.min.css';
 
@@ -33,7 +32,6 @@ const rootReducer = (state, action) => {
   return appReducer(state, action)
 }
 
-// const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 const store = createStore(rootReducer, compose(applyMiddleware(thunk), persistState()))
 
 ReactDOM.render(<Provider store={store}>

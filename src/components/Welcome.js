@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import HomeNavBar from './HomeNavBar'
 import LoggedInNavBar from './LoggedInNavBar'
+import {Container, Header} from 'semantic-ui-react'
 
 class Welcome extends React.Component {
 
@@ -11,6 +12,10 @@ class Welcome extends React.Component {
       return (
         <div className="welcome">
           <LoggedInNavBar />
+          <Container textAlign='center' className='welcome-header'>
+            <Header size='huge'>Blah Blah Blah App Title</Header>
+
+          </Container>
         </div>
       )
     } else {

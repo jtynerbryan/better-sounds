@@ -2,6 +2,7 @@ import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 import TopTracksList from './TopTracksList'
 import RecentTracksList from './RecentTracksList'
+import LoggedInNavBar from './LoggedInNavBar'
 import { bindActionCreators } from 'redux'
 import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
@@ -64,13 +65,12 @@ class UserResults extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (!this.state.toggleOn) {
       return (
-        <div className="App">
+        <div>
+          <LoggedInNavBar />
           <h1>{this.props.user.username}s Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
-          <Button onClick={this.logout}>Log Out</Button>
           <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
           <TopTracksList />
           <iframe src="https://open.spotify.com/embed?uri=spotify:user:1260967467:playlist:6DgTjbTQ4B7sp9roNJ1HD5" width="300" height="380" frameBorder="0" allowTransparency="true"></iframe>
@@ -78,10 +78,10 @@ class UserResults extends React.Component {
       )
     } else {
       return (
-        <div className={"App"}>
+        <div className>
+          <LoggedInNavBar />
           <h1>{this.props.user.username}s Aggregate Audio Features from Recently Played Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
-          <Button onClick={this.logout}>Log Out</Button>
           <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
           <RecentTracksList />
         </div>
