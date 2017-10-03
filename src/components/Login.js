@@ -10,9 +10,13 @@ import Loader from './Loader'
 class UserHome extends React.Component {
 
   componentDidMount() {
-    const code = this.props.location.search.split("=")[1]
-    this.props.authorize(code)
-    this.props.history.push("/fetch-user-data")
+    if (this.props.location.search="?error=access_denied") {
+      this.props.history.push('/')
+    } else {
+      const code = this.props.location.search.split("=")[1]
+      this.props.authorize(code)
+      this.props.history.push("/fetch-user-data")
+    }
   }
 
   handleClick = () => {

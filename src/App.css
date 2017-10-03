@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -15,12 +15,20 @@
   font-size: large;
 }
 
-.welcome-image {
-  max-width: 20%;
-  max-height: 20%;
-}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}*/
+
+.welcome {
+  background-color: ;
+  height: 100vh;
+}
+
+.welcome-image {
+  max-width: 40%;
+  max-height: 40%;
+  align-content: center;
 }
