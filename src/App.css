@@ -32,6 +32,25 @@
   color: white;
 }
 
+.loader {
+  background-image: url("./people-2557579_1920.jpg");
+  height: 100vh;
+}
+
+.loader .sk-cube-grid {
+  width: 257px;
+  height: 257px;
+  margin-top: 500px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+
+}
+
+
+
 .welcome-image {
   max-width: 40%;
   max-height: 40%;

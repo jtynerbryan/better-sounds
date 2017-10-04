@@ -10,6 +10,8 @@ import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
 import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
 import { getPlaylists } from '../actions/playlists'
+var Spinner = require('react-spinkit');
+
 class GetTracks extends React.Component {
 
   componentDidMount() {
@@ -59,16 +61,16 @@ class GetTracks extends React.Component {
 
     // if all data has been stored, move to user's results view
     if (this.props.relatedArtists.length > 0 && this.props.topTracksAudioFeatures.length > 0 && this.props.recentTracksAudioFeatures.length > 0) {
-      this.props.history.push('/user-results')
+      setTimeout(() => this.props.history.push('user-results'), 2000)
+
     }
 
   }
 
   render() {
-
     return (
       <div className="loader">
-
+        <Spinner className="spinner" name="cube-grid" color="white" />
       </div>
     )
   }
