@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Track from './Track'
-import { List } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 
 class RecentTracksList extends React.Component {
@@ -17,9 +17,11 @@ class RecentTracksList extends React.Component {
     })
     return (
       <div>
-      <List>
-        {mapTracksToFeatures.map((song, index) => <Track key={index} song={song}/>)}
-      </List>
+      <Grid>
+        <Grid.Row columns={4}>
+          {mapTracksToFeatures.map((song, index) => <Track key={index} song={song}/>)}
+        </Grid.Row>
+      </Grid>
       </div>
     )
   }

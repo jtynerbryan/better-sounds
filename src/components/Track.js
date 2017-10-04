@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Image, Modal, List, Button, Header } from 'semantic-ui-react'
+import { Divider, Image, Modal, List, Button, Header, Grid } from 'semantic-ui-react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 
 class Track extends React.Component {
@@ -14,17 +14,19 @@ class Track extends React.Component {
       this.props.song.attributes[0].liveness * 100,
       this.props.song.attributes[0].valence * 100,
     ]
-    
+
     return (
       <div>
-        <List.Item>
-        <Image src={this.props.song.info.album.images[2].url} size='tiny' verticalAlign='middle' />
-        <span>{this.props.song.info.name} by {this.props.song.info.artists[0].name}</span>
-        <Modal trigger={<Button>Audio Features</Button>}>
+        <div>
+        <Grid.Column>
+        <h4>{this.props.song.info.name}</h4>
+        <Modal trigger={<Image src={this.props.song.info.album.images[1].url} size='medium' verticalAlign='middle' />}>
+
+
           <Modal.Header>{this.props.song.info.name} by {this.props.song.info.artists[0].name}</Modal.Header>
           <Modal.Content image scrolling>
             <Image
-              size='medium'
+              size='large'
               src={this.props.song.info.album.images[1].url}
               wrapped
             />
@@ -37,8 +39,8 @@ class Track extends React.Component {
           <Modal.Actions>
           </Modal.Actions>
         </Modal>
-        <Divider />
-        </List.Item>
+        </Grid.Column>
+        </div>
       </div>
     )
   }

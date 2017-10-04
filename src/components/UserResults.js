@@ -11,9 +11,6 @@ import { connect } from 'react-redux'
 import { logoutUser } from '../actions/auth'
 import { Button } from 'semantic-ui-react'
 
-
-
-
 class UserResults extends React.Component {
 
   constructor() {

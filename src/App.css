@@ -46,10 +46,7 @@
   left: 0;
   right: 0;
   top: 40%;
-
 }
-
-
 
 .welcome-image {
   max-width: 40%;
@@ -59,4 +56,20 @@
 
 .ui.inverted.segment, .ui.primary.inverted.segment {
   border-radius: 0px;
+}
+
+.ui.middle.aligned.image {
+  margin: 10px;
+}
+
+div.column {
+  text-align: center;
+}
+
+.chartjs-render-monitor {
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  background-color: black;
 }
