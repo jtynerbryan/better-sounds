@@ -33,7 +33,7 @@
 }
 
 .loader {
-  background-image: url("./people-2557579_1920.jpg");
+  background-image: url("./people-2562222_1920.jpg");
   height: 100vh;
 }
 
@@ -56,6 +56,7 @@
 
 .ui.inverted.segment, .ui.primary.inverted.segment {
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 
 .ui.middle.aligned.image {
@@ -71,13 +72,42 @@ div.column {
 
 div.ui.grid {
   margin-top: 10px;
-  margin-left: 13.5%;
-}
-
-.chart-container {
-  background-color: #FAFAFA;
+  margin-left: 9.5%;
 }
 
 .header {
   text-align: center;
+}
+
+button.ui.button {
+  margin-left: 43.5%;
+  margin-bottom: 10px;
+}
+
+a.viewport-slider-button {
+  display: none;
+}
+canvas.chartjs-render-monitor {
+  margin-top: 50px;;
+}
+
+.tracks {
+  background-color: black;
+}
+
+div.viewport-slider-paginator {
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0 0 2px #ccc;
+  box-shadow: 0 0 2px #ccc;
+}
+
+a viewport-slider-paginator-bullet is-active {
+  border: 1px solid black;
+}
+
+.playlist {
+  margin-top: 126%;
+  background-image: url("./headphones-2588235_1920.jpg");
+  height: 100%;
+
 }

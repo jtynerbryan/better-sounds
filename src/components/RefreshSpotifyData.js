@@ -5,6 +5,7 @@ import { addRelatedArtists } from '../actions/relatedArtists'
 import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
+var Spinner = require('react-spinkit');
 
 
 class RefreshSpotifyData extends React.Component {
@@ -38,16 +39,14 @@ class RefreshSpotifyData extends React.Component {
     }
 
     if(this.props.relatedArtistsTracksWithFeatures.length > 0) {
-      this.props.history.push('/user-results')
+      setTimeout(() => this.props.history.push('user-results'), 2500)
     }
   }
 
   render() {
     return (
-      <div>
-        <h1>
-          Refreshing some of your Spotify Data...
-        </h1>
+      <div className="loader">
+        <Spinner className="spinner" name="cube-grid" color="white" />
       </div>
     )
   }
