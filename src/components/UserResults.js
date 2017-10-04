@@ -66,18 +66,20 @@ class UserResults extends React.Component {
       return (
         <div>
           <LoggedInNavBar />
-          <h1>{this.props.user.username}s Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
-          <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
-          <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
+          <h1 className='header'>Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
+          <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
+          <div className="chart-container">
+            <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
+          </div>
           <TopTracksList />
           <iframe src="https://open.spotify.com/embed?uri=spotify:user:1260967467:playlist:6DgTjbTQ4B7sp9roNJ1HD5" width="300" height="380" frameBorder="0" allowTransparency="true"></iframe>
         </div>
       )
     } else {
       return (
-        <div className>
+        <div>
           <LoggedInNavBar />
-          <h1>{this.props.user.username}s Aggregate Audio Features from Recently Played Tracks(scale of 0-100)</h1>
+          <h1 className='header'>Aggregate Audio Features from Recently Played Tracks(scale of 0-100)</h1>
           <Button onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
           <AudioFeaturesChart chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
           <RecentTracksList />
