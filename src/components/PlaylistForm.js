@@ -1,9 +1,10 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import { addPlaylist } from '../actions/playlists'
 import { clearAllRelatedArtistsData } from '../actions/relatedArtists'
-import { Form, Header } from 'semantic-ui-react'
+import { Form, Header, Message } from 'semantic-ui-react'
 
 
 class PlaylistForm extends React.Component {
@@ -38,10 +39,10 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const { value } = this.state
     return (
-      <div>
+      <div id="form">
+      <Message>
       <Header>Create your own playlist</Header>
       <Form onSubmit={this.handleSubmit}>
         <Form.Group widths='equal'>
@@ -56,8 +57,9 @@ class PlaylistForm extends React.Component {
           <Form.Radio label='Liveness' value='liveness' checked={value === 'liveness'} onChange={this.handleChange} />
           <Form.Radio label='Valence' value='valence' checked={value === 'valence'} onChange={this.handleChange} />
         </Form.Group>
-        <Form.Button>Submit</Form.Button>
+        <Form.Button id='submit-button'>Submit</Form.Button>
       </Form>
+      </Message>
       </div>
     )
   }
@@ -92,4 +94,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaylistForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PlaylistForm))

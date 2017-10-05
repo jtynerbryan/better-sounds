@@ -16,7 +16,7 @@ class AudioFeaturesChart extends React.Component {
       ]
     }
       return (
-        <div className='App'>
+        <div className='chart'>
         <Doughnut data={data} width={550}
         height={500}
         options={{

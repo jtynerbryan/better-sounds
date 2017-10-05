@@ -13,8 +13,6 @@ class Welcome extends React.Component {
         <div className="welcome">
           <LoggedInNavBar />
           <Container textAlign='center' className='welcome-header'>
-            <Header size='huge'>Blah Blah Blah App Title</Header>
-
           </Container>
         </div>
       )

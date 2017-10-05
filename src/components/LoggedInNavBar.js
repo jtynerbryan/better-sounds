@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withRouter, Redirect } from 'react-router'
+import { withRouter } from 'react-router'
 import { Menu, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -20,7 +20,6 @@ class LoggedInNavBar extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Segment inverted>
         <Menu inverted pointing secondary>

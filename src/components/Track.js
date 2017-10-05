@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Image, Modal, List, Button, Header, Grid } from 'semantic-ui-react'
+import { Image, Modal, Header, Grid } from 'semantic-ui-react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 
 class Track extends React.Component {
@@ -19,10 +19,8 @@ class Track extends React.Component {
       <div>
         <div>
         <Grid.Column>
-        <h4>{this.props.song.info.name}</h4>
-        <Modal trigger={<Image src={this.props.song.info.album.images[1].url} size='medium' verticalAlign='middle' />}>
 
-
+        <Modal trigger={<Image className='scale'src={this.props.song.info.album.images[1].url} size='medium' verticalAlign='middle' />}>
           <Modal.Header>{this.props.song.info.name} by {this.props.song.info.artists[0].name}</Modal.Header>
           <Modal.Content image scrolling>
             <Image
@@ -39,6 +37,8 @@ class Track extends React.Component {
           <Modal.Actions>
           </Modal.Actions>
         </Modal>
+        
+
         </Grid.Column>
         </div>
       </div>
