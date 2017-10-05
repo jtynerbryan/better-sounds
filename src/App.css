@@ -95,8 +95,11 @@ a.viewport-slider-paginator-bullet {
 
 #form {
   margin-top: 125px;
-
   width: 100%;
+}
+
+a.viewport-slider-button.test {
+  display: block;
 }
 
 .playlist {
@@ -135,7 +138,18 @@ div.viewport-slider {
 }
 
 .pointer {
-  color: black;
-  margin-top: 80px;
+  color: #212121;
+  margin-top: 100px;
   margin-left: 700px;
+}
+
+#arrow {
+  height: 30px;
+  width: 30px;
+  margin-left: 700px;
+}
+
+h1 .tracks-header {
+  text-align: center;
+  color: white;
 }
