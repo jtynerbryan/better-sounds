@@ -50,12 +50,13 @@ div.column {
 div.ui.grid {
   margin-top: 10px;
   margin-left: 9.5%;
+  background-color:
 }
 
 .header {
   text-align: center;
   margin-top: 40px;
-  color: black;
+  color: #212121;
 }
 
 button.ui.button {
@@ -67,9 +68,11 @@ a.viewport-slider-button {
   display: none;
 }
 
-canvas.chartjs-render-monitor {
+.big-chart {
   margin-top: 0px;
   background-color: #FAFAFA;
+  border-radius: 5px;
+  margin-right: 100px;
 }
 
 .tracks {
@@ -91,8 +94,8 @@ a.viewport-slider-paginator-bullet {
 }
 
 #form {
-  margin-top: 50px;
-  padding-bottom: 100px;
+  margin-top: 125px;
+
   width: 100%;
 }
 
@@ -115,4 +118,24 @@ a.viewport-slider-paginator-bullet {
 .scale:hover {
   transform: scale(1.1);
   z-index: 5;
+}
+
+div.four.column.row {
+  margin-right: 11.5%;
+  margin-top: 20px;
+}
+
+.ui.grid>[class*="four column"].row>.column {
+  margin-top: 10px;
+}
+
+div.viewport-slider {
+  /*background-image: url("./headphones-2588235_1920.jpg");*/
+  background-color: #F5F5F5;
+}
+
+.pointer {
+  color: black;
+  margin-top: 80px;
+  margin-left: 700px;
 }

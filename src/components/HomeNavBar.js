@@ -18,7 +18,6 @@ class HomeNavBar extends Component {
         <Menu inverted pointing secondary>
           <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
           <Menu.Item name='Login' href='http://localhost:3000/api/v1/login'/>
-          <Menu.Item name='About' />
         </Menu>
       </Segment>
     )

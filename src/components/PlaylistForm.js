@@ -43,13 +43,13 @@ class PlaylistForm extends React.Component {
     return (
       <div id="form">
       <Message>
-      <Header>Create your own playlist</Header>
+      <Header>Create your own Playlist</Header>
       <Form onSubmit={this.handleSubmit}>
         <Form.Group widths='equal'>
           <Form.Input label='Playlist Name' placeholder='My Playlist' onChange={this.handleTitle} />
         </Form.Group>
         <Form.Group inline>
-          <label>Choose an audio feature to be the theme of your playlist</label>
+          <label>Choose an audio feature and your playlist will be optimized for maximum (insert feature here)</label>
           <Form.Radio label='Danceablity' value='danceability' checked={value === 'danceability'} onChange={this.handleChange} />
           <Form.Radio label='Energy' value='energy' checked={value === 'energy'} onChange={this.handleChange} />
           <Form.Radio label='Acousticness' value='acousticness' checked={value === 'acousticness'} onChange={this.handleChange} />

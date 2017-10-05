@@ -37,7 +37,7 @@ class Track extends React.Component {
           <Modal.Actions>
           </Modal.Actions>
         </Modal>
-        
+
 
         </Grid.Column>
         </div>
