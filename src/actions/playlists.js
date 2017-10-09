@@ -32,7 +32,7 @@ export function addPlaylist(playlistName, audioFeature, tracks, userId) {
   }
 
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/create_playlist?user_id=${userId}&track_ids=${trackUrisToSend}&playlist_name=${playlistName} - created by Jesse's App`, body)
+    return fetch(`http://localhost:3000/api/v1/create_playlist?user_id=${userId}&track_ids=${trackUrisToSend}&playlist_name=${playlistName} - created by Better Sounds`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type: "ADD_NEW_PLAYLIST", payload: res.playlist})

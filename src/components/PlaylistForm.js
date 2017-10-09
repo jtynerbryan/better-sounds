@@ -48,14 +48,17 @@ class PlaylistForm extends React.Component {
         <Form.Group widths='equal'>
           <Form.Input label='Playlist Name' placeholder='My Playlist' onChange={this.handleTitle} />
         </Form.Group>
-        <Form.Group inline>
+        <Form.Group >
+          <span>
           <label>Choose an audio feature and your playlist will be optimized for maximum (insert feature here)</label>
           <Form.Radio label='Danceablity' value='danceability' checked={value === 'danceability'} onChange={this.handleChange} />
           <Form.Radio label='Energy' value='energy' checked={value === 'energy'} onChange={this.handleChange} />
           <Form.Radio label='Acousticness' value='acousticness' checked={value === 'acousticness'} onChange={this.handleChange} />
           <Form.Radio label='Instrumentalness' value='instrumentalness' checked={value === 'instrumentalness'} onChange={this.handleChange} />
+
           <Form.Radio label='Liveness' value='liveness' checked={value === 'liveness'} onChange={this.handleChange} />
           <Form.Radio label='Valence' value='valence' checked={value === 'valence'} onChange={this.handleChange} />
+          </span>
         </Form.Group>
         <Form.Button id='submit-button'>Submit</Form.Button>
       </Form>

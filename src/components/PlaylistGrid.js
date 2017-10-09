@@ -12,7 +12,7 @@ class PlaylistGrid extends React.Component {
     })
     return (
       <div>
-        <Grid>
+        <Grid id='playlist-grid'>
           <Grid.Row columns={4}>
           {playlists}
           </Grid.Row>

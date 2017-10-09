@@ -11,7 +11,7 @@ import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/auth'
-import { Button, Grid } from 'semantic-ui-react'
+import { Button, Grid, Popup } from 'semantic-ui-react'
 import Slider from 'react-viewport-slider';
 
 class UserResults extends React.Component {
@@ -65,12 +65,12 @@ class UserResults extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (!this.state.toggleOn) {
       return (
         <div>
+
           <Slider>
-            <div itemStyle={{ }}>
+            <div className="slide-1"itemStyle={{ }}>
               <LoggedInNavBar />
               <Grid>
                 <Grid.Row columns={2}>
@@ -78,19 +78,25 @@ class UserResults extends React.Component {
                     <h1 className='header'>Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
                     <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
-                    <h1 className='pointer'>See Tracks Below</h1>
-                    <img id="arrow"  src="https://www.shareicon.net/data/2015/09/15/101676_down_512x512.png"></img>
                   </Grid.Column>
                   <Grid.Column>
+                    <Popup
+                      trigger={<Button className="nav-popup">Navigation Help</Button>}
+                      content="Use the three button pagintor below to navigate between the Overview, Tracks, and Playlists"
+                      basic
+                    />
                     <PlaylistForm/>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
             </div>
             <div className="tracks" itemStyle={{ }}>
+              <h1 className="top-tracks-header">Top Tracks</h1>
+              <Button className='tracks-button' onClick={this.handleClick}>Toggle Top/Recent Tracks</Button>
               <TopTracksList />
             </div>
             <div className='playlist' itemStyle={{ }}>
+              <h1 className="playlist-header">Playlists</h1>
               <PlaylistGrid/>
             </div>
           </Slider>
@@ -100,7 +106,7 @@ class UserResults extends React.Component {
       return (
         <div>
           <Slider>
-            <div itemStyle={{ }}>
+            <div className="slide-1" itemStyle={{ }}>
               <LoggedInNavBar />
               <Grid>
                 <Grid.Row columns={2}>
@@ -108,19 +114,25 @@ class UserResults extends React.Component {
                     <h1 className='header'>Aggregate Audio Features from Recent Tracks(scale of 0-100)</h1>
                     <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
-                    <h1 className='pointer'>See Tracks Below</h1>
-                    <img id="arrow"  src="https://www.shareicon.net/data/2015/09/15/101676_down_512x512.png"></img>
                   </Grid.Column>
                   <Grid.Column>
+                    <Popup
+                      trigger={<Button className="nav-popup">Navigation Help</Button>}
+                      content="Use the three button pagintor below to navigate between the Overview, Tracks, and Playlists"
+                      basic
+                    />
                     <PlaylistForm/>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
             </div>
             <div className="tracks" itemStyle={{ }}>
+              <h1 className="recent-tracks-header">Recently Played Tracks</h1>
+              <Button className='tracks-button' onClick={this.handleClick}>Toggle Top/Recent Tracks</Button>
               <RecentTracksList />
             </div>
             <div className='playlist' itemStyle={{ }}>
+              <h1 className="playlist-header">Playlists</h1>
               <PlaylistGrid/>
             </div>
           </Slider>
