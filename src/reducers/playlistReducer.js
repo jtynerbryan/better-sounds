@@ -3,7 +3,7 @@ function playlistReducer(state = {
 }, action) {
   switch(action.type) {
     case 'GET_PLAYLISTS':
-      Object.assign({}, state, {
+      return Object.assign({}, state, {
         playlists: state.playlists.concat(action.payload)
       })
     case 'ADD_NEW_PLAYLIST':

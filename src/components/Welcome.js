@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import HomeNavBar from './HomeNavBar'
 import LoggedInNavBar from './LoggedInNavBar'
-import {Container, Header} from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 class Welcome extends React.Component {
 

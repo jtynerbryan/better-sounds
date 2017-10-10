@@ -7,7 +7,7 @@ class PlaylistGrid extends React.Component {
   render() {
     const playlists = this.props.playlists.map((playlist, index) => {
       return <Grid.Column key={index}>
-      <iframe src={`https://open.spotify.com/embed?uri=spotify:user:${this.props.user.username}:playlist:${playlist.spotify_id}`} width="300" height="380" frameBorder="0"></iframe>
+      <iframe title={playlist.spotify_id} src={`https://open.spotify.com/embed?uri=spotify:user:${this.props.user.username}:playlist:${playlist.spotify_id}`} width="300" height="380" frameBorder="0"></iframe>
       </Grid.Column>
     })
     return (

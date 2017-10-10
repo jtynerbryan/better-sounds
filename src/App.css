@@ -3,6 +3,20 @@ body {
 
 }
 
+.about {
+  background-color: #FAFAFA;
+  height: 100vh;
+  text-align: center;
+}
+
+div.ui.center.aligned.two.column.grid.about-content div.ui.container {
+  color: black;
+}
+
+div.ui.bulleted.list.about-list {
+  font-size: 17px;
+}
+
 .welcome {
   background-image: url("./headphones-2557583_1920.jpg");
   background-size: 100%;
@@ -14,12 +28,6 @@ body {
 .welcome-header {
   margin-top: 225px;
   color: #FAFAFA;
-}
-
-.welcome-image {
-  max-width: 40%;
-  max-height: 40%;
-  align-content: center;
 }
 
 .loader {
