@@ -17,6 +17,7 @@ class HomeNavBar extends Component {
       <Segment inverted className="navbar">
         <Menu inverted pointing secondary>
           <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
+          <Menu.Item name='About' onClick={() => this.props.history.push('/About')} />
           <Menu.Item name='Login' href='http://localhost:3000/api/v1/login'/>
         </Menu>
       </Segment>
