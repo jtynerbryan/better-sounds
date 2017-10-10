@@ -5,6 +5,9 @@ body {
 
 .welcome {
   background-image: url("./headphones-2557583_1920.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #000000;
   height: 100vh;
 }
 
@@ -233,5 +236,11 @@ div.viewport-slider {
 @media only screen and (max-width: 1385px) {
   .playlist {
     margin-top: 254.5%;
+  }
+}
+
+@media only screen and (max-width: 1266px) {
+  .playlist {
+    margin-top: 377.5%;
   }
 }

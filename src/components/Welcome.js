@@ -24,7 +24,11 @@ class Welcome extends React.Component {
       return (
         <div className="welcome">
           <HomeNavBar />
+          <Container textAlign='center' className='welcome-header'>
           <h1 className="home">Better Sounds</h1>
+          <h2>Analyze your Spotify listening habits</h2>
+          <h2>Create playlists of new music tailored to your needs</h2>
+          </Container>
         </div>
       )
     }
