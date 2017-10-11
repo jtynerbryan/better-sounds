@@ -25,7 +25,7 @@ class About extends React.Component {
                     <List.Item>Audio Features</List.Item>
                   </List>
                   <h3>Audio Features give an analytical portait of each song</h3>
-                  <p>Each feature is measured on a scale of 0-1</p>
+                  <h4>Each feature is measured on a scale of 0-1</h4>
                   <List bulleted className='about-list'>
                     <List.Item>
                       Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
@@ -86,7 +86,7 @@ class About extends React.Component {
                     <List.Item>Audio Features</List.Item>
                   </List>
                   <h3>Audio Features give an analytical portait of each song</h3>
-                  <p>Each feature is measured on a scale of 0-1</p>
+                  <h4>Each feature is measured on a scale of 0-1</h4>
                   <List bulleted className='about-list'>
                     <List.Item>
                       Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.

@@ -4,18 +4,18 @@ body {
 }
 
 .about {
-  background-image: url("./headphones-2626179_1920.jpg");
+  background-color: #EEEEEE;
   height: 100vh;
   text-align: center;
-  color: #FAFAFA;
+  color: black;
 }
 
 div.ui.center.aligned.two.column.grid.about-content div.ui.container {
-  color: #FAFAFA;
+  color: black;
 }
 
 #playlist-creation {
-  color: #FAFAFA;
+  color: black;
 }
 
 div.ui.list.about-list {
