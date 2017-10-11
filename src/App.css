@@ -4,17 +4,31 @@ body {
 }
 
 .about {
-  background-color: #FAFAFA;
+  background-image: url("./headphones-2626179_1920.jpg");
   height: 100vh;
   text-align: center;
+  color: #FAFAFA;
 }
 
 div.ui.center.aligned.two.column.grid.about-content div.ui.container {
-  color: black;
+  color: #FAFAFA;
 }
 
-div.ui.bulleted.list.about-list {
+#playlist-creation {
+  color: #FAFAFA;
+}
+
+div.ui.list.about-list {
   font-size: 17px;
+}
+
+div.ui.list.about-list div p{
+  margin-left: 10px;
+  display: inline-block;
+}
+
+svg {
+  position: relative;
 }
 
 .welcome {
