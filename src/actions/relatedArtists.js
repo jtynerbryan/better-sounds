@@ -5,7 +5,7 @@ export function addRelatedArtists(user_id,artist_id) {
   }
 
   return (dispatch) => {
-    return fetch(`http://http://better-sounds-api.herokuapp.com/api/v1/related_artists?user_id=${user_id}&artist_id=${artist_id}`, body)
+    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/related_artists?user_id=${user_id}&artist_id=${artist_id}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type: "ADD_RELATED_ARTISTS", payload: res.related_artists.artists})
