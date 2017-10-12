@@ -1,6 +1,7 @@
 export function authorize(code){
   const body = {
-    method: 'POST'
+    method: 'POST',
+    mode: 'cors'
   }
   return (dispatch) => {
     return fetch(`http://better-sounds-api.herokuapp.com/api/v1/users/create?code=${code}`, body)

@@ -1,6 +1,7 @@
 export function addTopTracks(id) {
   const body = {
-    method: 'POST'
+    method: 'POST',
+    mode: 'cors'
   }
   return (dispatch) => {
     return fetch(`http://better-sounds-api.herokuapp.com/api/v1/top_tracks?id=${id}`, body)
@@ -13,7 +14,8 @@ export function addTopTracks(id) {
 
 export function addRecentTracks(id) {
   const body = {
-    method: 'POST'
+    method: 'POST',
+    mode: 'cors'
   }
   return (dispatch) => {
     return fetch(`http://better-sounds-api.herokuapp.com/api/v1/recently_played_tracks?id=${id}`, body)

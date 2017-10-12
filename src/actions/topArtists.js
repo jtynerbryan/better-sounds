@@ -1,6 +1,7 @@
 export function addTopArtists(user_id) {
   const body = {
-    method: 'POST'
+    method: 'POST',
+    mode: 'cors'
   }
   return (dispatch) => {
     return fetch(`http://better-sounds-api.herokuapp.com/api/v1/top_artists?user_id=${user_id}`, body)
