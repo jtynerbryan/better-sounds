@@ -18,7 +18,7 @@ class HomeNavBar extends Component {
         <Menu inverted pointing secondary>
           <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
           <Menu.Item name='About' onClick={() => this.props.history.push('/about')} />
-          <Menu.Item name='Login' href='http://localhost:3000/api/v1/login'/>
+          <Menu.Item name='Login' href='http://better-sounds-api.herokuapp.com/api/v1/login'/>
         </Menu>
       </Segment>
     )

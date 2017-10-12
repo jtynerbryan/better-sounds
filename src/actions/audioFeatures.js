@@ -5,7 +5,7 @@ export function addTopTracksAudioFeatures(id, tracks) {
   }
 
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/audio_features?id=${id}&ids=${trackIds}`, body)
+    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/audio_features?id=${id}&ids=${trackIds}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type: "ADD_TOP_TRACKS_AUDIO_FEATURES", payload: res.features.audio_features})
@@ -21,7 +21,7 @@ export function addRecentTracksAudioFeatures(id, tracks) {
   }
 
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/audio_features?id=${id}&ids=${trackIds}`, body)
+    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/audio_features?id=${id}&ids=${trackIds}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type: "ADD_RECENT_TRACKS_AUDIO_FEATURES", payload: res.features.audio_features})

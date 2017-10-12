@@ -3,7 +3,7 @@ export function authorize(code){
     method: 'POST'
   }
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/users/create?code=${code}`, body)
+    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/users/create?code=${code}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type:"AUTHORIZE", payload: res})
