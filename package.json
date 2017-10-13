@@ -1,5 +1,5 @@
 {
-  "name": "spotify-test",
+  "name": "better-sounds",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +12,6 @@
     "react-scripts": "1.0.13",
     "react-spinkit": "^3.0.0",
     "react-viewport-slider": "^0.0.9",
-    "redis": "^2.8.0",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-localstorage": "^0.4.1",
