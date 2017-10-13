@@ -65,7 +65,6 @@ class UserResults extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (!this.state.toggleOn) {
       return (
         <div>
