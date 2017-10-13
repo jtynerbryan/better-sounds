@@ -4,7 +4,7 @@ export function addTopTracks(id) {
     mode: 'cors'
   }
   return (dispatch) => {
-    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/top_tracks?id=${id}`, body)
+    return fetch(`//better-sounds-api.herokuapp.com/api/v1/top_tracks?id=${id}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type:"ADD_TOP_TRACKS", payload: res.tracks.items})
@@ -18,7 +18,7 @@ export function addRecentTracks(id) {
     mode: 'cors'
   }
   return (dispatch) => {
-    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/recently_played_tracks?id=${id}`, body)
+    return fetch(`//better-sounds-api.herokuapp.com/api/v1/recently_played_tracks?id=${id}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type:"ADD_RECENTLY_PLAYED_TRACKS", payload: res.tracks.items})

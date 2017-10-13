@@ -4,7 +4,7 @@ export function authorize(code){
     mode: 'cors'
   }
   return (dispatch) => {
-    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/users/create?code=${code}`, body)
+    return fetch(`//better-sounds-api.herokuapp.com/api/v1/users/create?code=${code}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type:"AUTHORIZE", payload: res})
