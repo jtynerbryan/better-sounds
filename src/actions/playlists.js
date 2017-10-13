@@ -47,7 +47,7 @@ export function getPlaylists(userId) {
   }
 
   return (dispatch) => {
-    return fetch(`http://better-sounds-api.herokuapp.com/api/v1/get_playlists?user_id=${userId}`, body)
+    return fetch(`//better-sounds-api.herokuapp.com/api/v1/get_playlists?user_id=${userId}`, body)
     .then(res => res.json())
     .then(res => {
       dispatch({type: "GET_PLAYLISTS", payload: res.playlists})
