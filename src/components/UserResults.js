@@ -75,7 +75,7 @@ class UserResults extends React.Component {
               <Grid>
                 <Grid.Row columns={2}>
                   <Grid.Column>
-                    <h1 className='header'>Aggregate Audio Features from Top Tracks(scale of 0-100)</h1>
+                    <h2 className='header'>Aggregate Audio Features from Top Tracks(scale of 0-100)</h2>
                     <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
                   </Grid.Column>
@@ -111,7 +111,7 @@ class UserResults extends React.Component {
               <Grid>
                 <Grid.Row columns={2}>
                   <Grid.Column>
-                    <h1 className='header'>Aggregate Audio Features from Recent Tracks(scale of 0-100)</h1>
+                    <h2 className='header'>Aggregate Audio Features from Recent Tracks(scale of 0-100)</h2>
                     <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
                   </Grid.Column>

@@ -235,6 +235,12 @@ div.viewport-slider {
   float: right;
 }
 
+@media only screen and (max-width: 1460px) {
+  .playlist {
+    margin-top: 240.2%;
+  }
+}
+
 @media only screen and (max-width: 1430px) {
   .playlist {
     margin-top: 246.5%;
