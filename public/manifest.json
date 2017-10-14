@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Better Sounds",
+  "name": "Better Sounds",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "spotify_icon.png",
       "sizes": "192x192",
       "type": "image/png"
     }
