@@ -19,6 +19,7 @@ class HomeNavBar extends Component {
           <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
           <Menu.Item name='About' onClick={() => this.props.history.push('/about')} />
           <Menu.Item name='Login' href='http://better-sounds-api.herokuapp.com/api/v1/login'/>
+          <Menu.Item position="right" name='GitHub' href='http://github.com/jtynerbryan' target="_blank"/>
         </Menu>
       </Segment>
     )
