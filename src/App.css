@@ -147,6 +147,7 @@ a.viewport-slider-button.test {
   margin-top: 242.5%;
   background-image: url("./headphones-2626179_1920.jpg");
   background-repeat: repeat-y;
+  height: 100%;
 }
 
 .home {
