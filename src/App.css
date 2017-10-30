@@ -6,9 +6,7 @@ body {
 .about {
   background-image: url("./headphones-2626179_1920.jpg");
   background-size: 110%;
-  background-repeat: no-repeat;
-  background-color: #000000;
-  height: 100vh;
+  background-repeat: repeat-y;
   text-align: center;
   color: #FAFAFA;
 }
