@@ -17,7 +17,7 @@ class RecentTracksList extends React.Component {
     })
     return (
       <div>
-      <Grid>
+      <Grid centered>
         <Grid.Row columns={4}>
           {mapTracksToFeatures.map((song, index) => <Track key={index} song={song}/>)}
         </Grid.Row>

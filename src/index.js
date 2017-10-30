@@ -14,6 +14,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage'
 import 'semantic-ui-css/semantic.min.css';
+import './index.css';
 
 const appReducer = combineReducers({
   auth: authReducer,

@@ -12,7 +12,6 @@ import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/auth'
 import { Button, Grid, Popup } from 'semantic-ui-react'
-import Slider from 'react-viewport-slider';
 
 class UserResults extends React.Component {
 
@@ -68,13 +67,12 @@ class UserResults extends React.Component {
     if (!this.state.toggleOn) {
       return (
         <div>
-          <Slider>
-            <div className="slide-1"itemStyle={{ }}>
+          <div className="slide-1">
               <LoggedInNavBar />
               <Grid>
                 <Grid.Row columns={2}>
                   <Grid.Column>
-                    <h2 className='header'>Aggregate Audio Features from Top Tracks(scale of 0-100)</h2>
+                    <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
                     <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
                   </Grid.Column>
@@ -88,29 +86,28 @@ class UserResults extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
+              <h3>Tracks Below</h3>
             </div>
-            <div className="tracks" itemStyle={{ }}>
+            <div className="tracks">
               <h1 className="top-tracks-header">Top Tracks</h1>
               <Button className='tracks-button' onClick={this.handleClick}>Toggle Top/Recent Tracks</Button>
               <TopTracksList />
             </div>
-            <div className='playlist' itemStyle={{ }}>
+            <div className='playlist'>
               <h1 className="playlist-header">Playlists</h1>
               <PlaylistGrid/>
             </div>
-          </Slider>
         </div>
       )
     } else {
       return (
         <div>
-          <Slider>
-            <div className="slide-1" itemStyle={{ }}>
+          <div className="slide-1">
               <LoggedInNavBar />
               <Grid>
                 <Grid.Row columns={2}>
                   <Grid.Column>
-                    <h2 className='header'>Aggregate Audio Features from Recent Tracks(scale of 0-100)</h2>
+                    <h2 className='header'>Aggregate Audio Features from Recent Tracks</h2>
                     <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
                   </Grid.Column>
@@ -124,17 +121,17 @@ class UserResults extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
+              <h3>Tracks Below</h3>
             </div>
-            <div className="tracks" itemStyle={{ }}>
+            <div className="tracks">
               <h1 className="recent-tracks-header">Recently Played Tracks</h1>
               <Button className='tracks-button' onClick={this.handleClick}>Toggle Top/Recent Tracks</Button>
               <RecentTracksList />
             </div>
-            <div className='playlist' itemStyle={{ }}>
+            <div className='playlist'>
               <h1 className="playlist-header">Playlists</h1>
               <PlaylistGrid/>
             </div>
-          </Slider>
         </div>
       )
     }
