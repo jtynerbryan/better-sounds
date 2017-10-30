@@ -5,7 +5,6 @@ body {
 
 .about {
   background-image: url("./headphones-2626179_1920.jpg");
-  background-size: 110%;
   background-repeat: repeat-y;
   text-align: center;
   color: #FAFAFA;
@@ -20,7 +19,7 @@ div.ui.center.aligned.two.column.grid.about-content div.ui.container {
 }
 
 div.ui.list.about-list {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 div.ui.list.about-list div p{
@@ -79,10 +78,6 @@ div.column {
   color: #FAFAFA;
 }
 
-div.ui.grid {
-  margin-top: 0px;
-}
-
 .header {
   text-align: center;
   margin-top: 40px;
@@ -98,12 +93,8 @@ label {
 }
 
 button.ui.button {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
-}
-
-a.viewport-slider-button {
-  display: none;
 }
 
 .big-chart {
@@ -115,21 +106,7 @@ a.viewport-slider-button {
 
 .tracks {
   background-color: #212121;
-  margin-top: 105px;
-}
-
-div.viewport-slider-paginator {
-  border: 12px solid #E0E0E0;
-  -webkit-box-shadow: 0 0 2px #ccc;
-  box-shadow: 0 0 10px black;
-  border-radius: 4px;
-  background: #E0E0E0;
-}
-
-a.viewport-slider-paginator-bullet {
-  border: .1px solid #E0E0E0;
-  background-color: #9E9E9E;
-  margin: 7px 0;
+  text-align: center;
 }
 
 #form {
@@ -137,19 +114,10 @@ a.viewport-slider-paginator-bullet {
   width: 100%;
 }
 
-a.viewport-slider-button.test {
-  display: block;
-}
-
 .playlist {
-
-}
-
-div.viewport-slider-item.viewport-slider-item-3 {
-  margin-top: 242.5%;
   background-image: url("./headphones-2626179_1920.jpg");
   background-repeat: repeat-y;
-  height: 100%;
+  text-align: center;
 }
 
 .home {
@@ -178,58 +146,38 @@ div.viewport-slider-item.viewport-slider-item-3 {
 
 div.four.column.row {
   margin-top: 20px;
-  margin-left: 120px;
 }
 
 .ui.grid>[class*="four column"].row>.column {
   margin-top: 10px;
 }
 
-.pointer {
-  color: #212121;
-  padding-bottom: 2px;
-  margin-left: 670px;
-  height: 100px;
-}
-
-#arrow {
-  height: 30px;
-  width: 30px;
-  margin-left: 690px;
-}
-
-#playlist-grid {
-  margin-left: -70px;
-  margin-right: 40px;
-}
-
 .slide-1 {
   background-color: #F5F5F5;
+  height: 100vh;
+  text-align: center;
 }
 
-div.viewport-slider {
-  background-color: #F5F5F5;
+div h2.header {
+  margin-top: 12px;
 }
 
 .playlist-header {
-  margin-left: 46.6%;
   padding-top: 15px;
 }
 
 .top-tracks-header {
-  margin-left: 46%;
   padding-top: 15px;
   color: #FAFAFA;
 }
 
 .recent-tracks-header {
-  margin-left: 41%;
   padding-top: 15px;
   color: #FAFAFA;
 }
 
 .button.ui.button.tracks-button {
-  margin-left: 43.7%;
+  margin: 0 auto;
   margin-top: 0px;
 }
 
@@ -237,44 +185,46 @@ div.viewport-slider {
   float: right;
 }
 
-@media only screen and (max-width: 1460px) {
-  .playlist {
-    margin-top: 240.2%;
+.playlist .ui.centered.grid .four.column.row div.column {
+  text-align: center;
+}
+
+iframe {
+  margin: 10px;
+}
+
+@media (max-width: 1198px) {
+  .welcome {
+    background-image: url("./headphones-2557583_1920.jpg");
+    background-size: 120%;
+    background-repeat: no-repeat;
+    height: 100vh;
   }
 }
 
-@media only screen and (max-width: 1430px) {
-  .playlist {
-    margin-top: 246.5%;
+@media (max-width: 1000px) {
+  .welcome {
+    background-image: url("./headphones-2557583_1920.jpg");
+    background-size: 135%;
+    background-repeat: no-repeat;
+    height: 100vh;
   }
 }
 
-@media only screen and (max-width: 1417px) {
-  .playlist {
-    margin-top: 248.5%;
+@media (max-width: 888px) {
+  .welcome {
+    background-image: url("./headphones-2557583_1920.jpg");
+    background-size: 155%;
+    background-repeat: no-repeat;
+    height: 100vh;
   }
 }
 
-@media only screen and (max-width: 1403px) {
-  .playlist {
-    margin-top: 250.5%;
-  }
-}
-
-@media only screen and (max-width: 1397px) {
-  .playlist {
-    margin-top: 252%;
-  }
-}
-
-@media only screen and (max-width: 1385px) {
-  .playlist {
-    margin-top: 254.5%;
-  }
-}
-
-@media only screen and (max-width: 1266px) {
-  .playlist {
-    margin-top: 377.5%;
+@media (max-width: 724px) {
+  .welcome {
+    background-image: url("./headphones-2557583_1920.jpg");
+    background-size: 185%;
+    background-repeat: no-repeat;
+    height: 100vh;
   }
 }
