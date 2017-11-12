@@ -77,11 +77,6 @@ class UserResults extends React.Component {
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
                   </Grid.Column>
                   <Grid.Column>
-                    <Popup
-                      trigger={<Button className="nav-popup">Navigation Help</Button>}
-                      content="Use the three button pagintor below to navigate between the Overview, Tracks, and Playlists"
-                      basic
-                    />
                     <PlaylistForm/>
                   </Grid.Column>
                 </Grid.Row>
@@ -112,11 +107,6 @@ class UserResults extends React.Component {
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
                   </Grid.Column>
                   <Grid.Column>
-                    <Popup
-                      trigger={<Button className="nav-popup">Navigation Help</Button>}
-                      content="Use the three button pagintor below to navigate between the Overview, Tracks, and Playlists"
-                      basic
-                    />
                     <PlaylistForm/>
                   </Grid.Column>
                 </Grid.Row>

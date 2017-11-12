@@ -9,8 +9,9 @@ class About extends React.Component {
   render() {
     if (this.props.isLoggedIn) {
       return (
-        <div className='about'>
+        <div>
           <LoggedInNavBar/>
+          <div className='about'>
           <h1>How does Better Sounds work?</h1>
           <Grid columns={2} textAlign='center' className='about-content'>
             <Grid.Row >
@@ -66,6 +67,7 @@ class About extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
+          </div>
         </div>
       )
     } else {

@@ -1,12 +1,11 @@
 
 body {
   font-family: 'Roboto', sans-serif !important;
-
 }
 
 .about {
   background-image: url("./headphones-2626179_1920.jpg");
-  background-repeat: repeat-y;
+  height: 110vh;
   text-align: center;
   color: #FAFAFA;
 }
