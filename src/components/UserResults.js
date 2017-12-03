@@ -70,13 +70,11 @@ class UserResults extends React.Component {
             <LoggedInNavBar />
             <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
             <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
-            <br></br>
-            <h3>Tracks Below</h3>
           </div>
-            <div className="tracks">
-              <h1 className="top-tracks-header">Top Tracks</h1>
-              <TopTracksList />
-            </div>
+          <div className="tracks">
+            <h1 className="top-tracks-header">Top Tracks</h1>
+            <TopTracksList />
+          </div>
         </div>
       )
     }
