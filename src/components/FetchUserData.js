@@ -63,7 +63,7 @@ class GetTracks extends React.Component {
 
     // if all data has been stored, move to user's results view
     if (this.props.relatedArtists.length > 0 && this.props.topTracksAudioFeatures.length > 0) {
-      setTimeout(() => this.props.history.push('user-results'), 4000)
+      setTimeout(() => this.props.history.push('playlists'), 4000)
     }
 
   }

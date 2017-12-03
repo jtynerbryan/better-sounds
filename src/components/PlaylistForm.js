@@ -42,7 +42,6 @@ class PlaylistForm extends React.Component {
     const { value } = this.state
     return (
       <Modal trigger={<Button>Create a Playlist</Button>}>
-        <div id="form">
         <Message>
         <Header>Create your own Playlist</Header>
         <Form onSubmit={this.handleSubmit}>
@@ -63,7 +62,6 @@ class PlaylistForm extends React.Component {
           <Form.Button id='submit-button'>Submit</Form.Button>
         </Form>
         </Message>
-        </div>
       </Modal>
     )
   }
