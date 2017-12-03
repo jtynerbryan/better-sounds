@@ -7,6 +7,7 @@ import About from './components/About'
 import FetchUserData from './components/FetchUserData'
 import UserResults from './components/UserResults'
 import RefreshSpotifyData from './components/RefreshSpotifyData'
+import Playlists from './components/Playlists'
 
 class App extends Component {
   render() {
