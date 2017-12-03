@@ -11,8 +11,8 @@ class PlaylistGrid extends React.Component {
 
     if (this.props.playlists.length === 0) {
       return (
-        <div>
-          <h2>You havent created any Playlists yet</h2>
+        <div className="playlist-2">
+          <h2>You haven't created any Playlists yet</h2>
         </div>
       )
     } else {

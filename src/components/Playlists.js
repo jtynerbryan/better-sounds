@@ -2,20 +2,40 @@ import React from 'react'
 import PlaylistForm from './PlaylistForm'
 import PlaylistGrid from './PlaylistGrid'
 import LoggedInNavBar from './LoggedInNavBar'
+import { connect } from 'react-redux'
 
 class Playlists extends React.Component {
 
   render() {
-    return (
-      <div className="playlist">
-        <LoggedInNavBar />
-        <h1>Playlists</h1>
-        <PlaylistForm/>
-        <PlaylistGrid/>
-      </div>
-    )
+
+    if (this.props.playlists.lenth > 0) {
+      return (
+        <div className="playlist">
+          <LoggedInNavBar />
+          <h1>Playlists</h1>
+          <PlaylistForm/>
+          <PlaylistGrid/>
+        </div>
+      )
+    } else {
+      return (
+        <div className="empty-playlist">
+          <LoggedInNavBar />
+          <h1>Playlists</h1>
+          <PlaylistForm/>
+          <PlaylistGrid/>
+        </div>
+      )
+    }
+
   }
 
 }
 
-export default Playlists
+function mapStateToProps(state) {
+  return {
+    playlists: state.playlists.playlists
+  }
+}
+
+export default connect(mapStateToProps, null)(Playlists)
