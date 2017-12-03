@@ -118,7 +118,7 @@ button.ui.button {
 }
 
 .playlist-2 {
-  background-image: url("./headphones-2626179_1920.jpg");
+  background-color: #212121;
   height: 100vh;
   text-align: center;
   color: #FAFAFA;
@@ -126,6 +126,11 @@ button.ui.button {
 
 .empty-playlist {
   background-color: #212121;
+  text-align: center;
+  color: #FAFAFA;
+}
+
+.form {
   text-align: center;
 }
 

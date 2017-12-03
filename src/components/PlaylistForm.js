@@ -45,9 +45,9 @@ class PlaylistForm extends React.Component {
         <Modal.Header>Create your own Playlist</Modal.Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths='equal'>
-            <Form.Input label='Playlist Name' placeholder='My Playlist' onChange={this.handleTitle} />
+            <Form.Input placeholder='My Playlist' onChange={this.handleTitle} />
           </Form.Group>
-          <Form.Group >
+          <Form.Group>
             <span>
             <label>Select an audio feature to appear prominently in your playlist</label>
             <Form.Radio label='Danceablity' value='danceability' checked={value === 'danceability'} onChange={this.handleChange} />
