@@ -7,7 +7,7 @@ class Playlists extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="playlist">
         <LoggedInNavBar />
         <h1>Playlists</h1>
         <PlaylistForm/>
