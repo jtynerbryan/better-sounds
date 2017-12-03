@@ -117,16 +117,14 @@ button.ui.button {
 }
 
 .playlist-2 {
-  background-color: #1B1C1E;
+  background-color: #FAFAFA;
   height: 100vh;
   text-align: center;
-  color: #FAFAFA;
 }
 
 .empty-playlist {
-  background-color: #1B1C1E;
+  background-color: #FAFAFA;
   text-align: center;
-  color: #FAFAFA;
 }
 
 .form {
