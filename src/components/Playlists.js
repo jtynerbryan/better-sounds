@@ -1,6 +1,7 @@
 import React from 'react'
 import PlaylistForm from './PlaylistForm'
 import PlaylistGrid from './PlaylistGrid'
+import LoggedInNavBar from './LoggedInNavBar'
 
 class Playlists extends React.Component {
 
