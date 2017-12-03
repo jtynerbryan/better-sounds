@@ -111,6 +111,9 @@ button.ui.button {
 
 .playlist {
   background-image: url("./headphones-2626179_1920.jpg");
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-repeat: repeat-y;
   text-align: center;
   color: #FAFAFA;
