@@ -66,28 +66,16 @@ class UserResults extends React.Component {
   render() {
       return (
         <div>
-          <div className="slide-1">
-              <LoggedInNavBar />
-              <Grid>
-                <Grid.Row columns={2}>
-                  <Grid.Column>
-                    <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
-                    <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
-                  </Grid.Column>
-                  <Grid.Column>
-                    <PlaylistForm/>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-              <h3>Tracks Below</h3>
-            </div>
+          <div>
+            <LoggedInNavBar />
+            <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
+            <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
+            <br></br>
+            <h3>Tracks Below</h3>
+          </div>
             <div className="tracks">
               <h1 className="top-tracks-header">Top Tracks</h1>
               <TopTracksList />
-            </div>
-            <div className='playlist'>
-              <h1 className="playlist-header">Playlists</h1>
-              <PlaylistGrid/>
             </div>
         </div>
       )
