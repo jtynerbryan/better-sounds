@@ -39,7 +39,7 @@ class RefreshSpotifyData extends React.Component {
     }
 
     if(this.props.relatedArtistsTracksWithFeatures.length > 0) {
-      setTimeout(() => this.props.history.push('user-results'), 2500)
+      setTimeout(() => this.props.history.push('/playlists'), 2500)
     }
   }
 
