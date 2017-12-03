@@ -8,7 +8,7 @@ class Playlists extends React.Component {
 
   render() {
 
-    if (this.props.playlists.lenth > 0) {
+    if (this.props.playlists.length > 0) {
       return (
         <div className="playlist">
           <LoggedInNavBar />
