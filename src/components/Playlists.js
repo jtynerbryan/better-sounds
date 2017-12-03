@@ -4,15 +4,10 @@ import PlaylistGrid from './PlaylistGrid'
 
 class Playlists extends React.Component {
 
-  componentWillMount() {
-    if (!this.props.isLoggedIn) {
-      this.props.history.push('/')
-    }
-  }
-
   render() {
     return (
       <div>
+        <LoggedInNavBar />
         <h1>Playlists</h1>
         <PlaylistForm/>
         <PlaylistGrid/>
