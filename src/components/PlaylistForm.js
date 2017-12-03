@@ -42,15 +42,14 @@ class PlaylistForm extends React.Component {
     const { value } = this.state
     return (
       <Modal trigger={<Button>Create a Playlist</Button>}>
-        <Message>
-        <Header>Create your own Playlist</Header>
+        <Modal.Header>Create your own Playlist</Modal.Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths='equal'>
             <Form.Input label='Playlist Name' placeholder='My Playlist' onChange={this.handleTitle} />
           </Form.Group>
           <Form.Group >
             <span>
-            <label>Choose an audio feature and your playlist will be optimized for maximum (insert feature here)</label>
+            <label>Select an audio feature to appear prominently in your playlist</label>
             <Form.Radio label='Danceablity' value='danceability' checked={value === 'danceability'} onChange={this.handleChange} />
             <Form.Radio label='Energy' value='energy' checked={value === 'energy'} onChange={this.handleChange} />
             <Form.Radio label='Acousticness' value='acousticness' checked={value === 'acousticness'} onChange={this.handleChange} />
@@ -61,7 +60,6 @@ class PlaylistForm extends React.Component {
           </Form.Group>
           <Form.Button id='submit-button'>Submit</Form.Button>
         </Form>
-        </Message>
       </Modal>
     )
   }
