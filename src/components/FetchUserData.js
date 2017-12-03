@@ -24,11 +24,13 @@ class GetTracks extends React.Component {
     }.bind(this), 2500);
   }
 
+  //all actions involving recently played tracks have been commented out until Spotify makes this endpoint available again
+
   componentDidUpdate() {
     // get user's top tracks and artists
     if (this.props.user.id !== null && this.props.topTracks.length === 0 ) {
       this.props.addTopTracks(this.props.user.id)
-      this.props.addRecentTracks(this.props.user.id)
+      // this.props.addRecentTracks(this.props.user.id)
       this.props.addTopArtists(this.props.user.id)
     }
 
@@ -38,9 +40,9 @@ class GetTracks extends React.Component {
     }
 
     // get audio features of recent tracks
-    if (this.props.recentTracks.length > 0 && this.props.recentTracksAudioFeatures.length === 0) {
-      this.props.addRecentTracksAudioFeatures(this.props.user.id, this.props.recentTracks)
-    }
+    // if (this.props.recentTracks.length > 0 && this.props.recentTracksAudioFeatures.length === 0) {
+    //   this.props.addRecentTracksAudioFeatures(this.props.user.id, this.props.recentTracks)
+    // }
 
     // get aggregate of top tracks audio features by category
     if (this.props.topTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfTopTracks.danceability === 0) {
@@ -48,9 +50,9 @@ class GetTracks extends React.Component {
     }
 
     // get aggregate of recent tracks audio features by category
-    if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
-      this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
-    }
+    // if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
+    //   this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
+    // }
 
     // get a related artist by random from user's top 5 artists
     if (this.props.topArtists.length > 0 && this.props.relatedArtists.length === 0) {

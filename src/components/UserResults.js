@@ -15,25 +15,25 @@ import { Button, Grid, Popup } from 'semantic-ui-react'
 
 class UserResults extends React.Component {
 
-  constructor() {
-    super()
-
-    this.state = {
-      toggleOn: false
-    }
-  }
-
-  handleClick = () => {
-    if (this.state.toggleOn) {
-      this.setState({
-        toggleOn: false
-      })
-    } else {
-      this.setState({
-        toggleOn: true
-      })
-    }
-  }
+  // constructor() {
+  //   super()
+  //
+  //   this.state = {
+  //     toggleOn: false
+  //   }
+  // }
+  //
+  // handleClick = () => {
+  //   if (this.state.toggleOn) {
+  //     this.setState({
+  //       toggleOn: false
+  //     })
+  //   } else {
+  //     this.setState({
+  //       toggleOn: true
+  //     })
+  //   }
+  // }
 
   logout = () => {
     this.props.logoutUser()
@@ -64,7 +64,6 @@ class UserResults extends React.Component {
   }
 
   render() {
-    if (!this.state.toggleOn) {
       return (
         <div>
           <div className="slide-1">
@@ -73,7 +72,6 @@ class UserResults extends React.Component {
                 <Grid.Row columns={2}>
                   <Grid.Column>
                     <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
-                    <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
                     <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
                   </Grid.Column>
                   <Grid.Column>
@@ -85,7 +83,6 @@ class UserResults extends React.Component {
             </div>
             <div className="tracks">
               <h1 className="top-tracks-header">Top Tracks</h1>
-              <Button className='tracks-button' onClick={this.handleClick}>Toggle Top/Recent Tracks</Button>
               <TopTracksList />
             </div>
             <div className='playlist'>
@@ -94,39 +91,9 @@ class UserResults extends React.Component {
             </div>
         </div>
       )
-    } else {
-      return (
-        <div>
-          <div className="slide-1">
-              <LoggedInNavBar />
-              <Grid>
-                <Grid.Row columns={2}>
-                  <Grid.Column>
-                    <h2 className='header'>Aggregate Audio Features from Recent Tracks</h2>
-                    <Button className='button' onClick={this.handleClick}>Toggle Top/Recent Audio Features</Button>
-                    <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfRecentTracks).map(val => val * 2)} />
-                  </Grid.Column>
-                  <Grid.Column>
-                    <PlaylistForm/>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-              <h3>Tracks Below</h3>
-            </div>
-            <div className="tracks">
-              <h1 className="recent-tracks-header">Recently Played Tracks</h1>
-              <Button className='tracks-button' onClick={this.handleClick}>Toggle Top/Recent Tracks</Button>
-              <RecentTracksList />
-            </div>
-            <div className='playlist'>
-              <h1 className="playlist-header">Playlists</h1>
-              <PlaylistGrid/>
-            </div>
-        </div>
-      )
     }
-  }
 }
+
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
