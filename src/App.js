@@ -12,12 +12,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route exact path='/' component={Welcome}/>
-        <Route exact path='/success' component={Login}/>
-        <Route exact path='/fetch-user-data' component={FetchUserData}/>
-        <Route exact path='/user-results' component={UserResults}/>
-        <Route exact path='/refresh-spotify-data' component={RefreshSpotifyData}/>
-        <Route exact path='/about' component={About}/>
+        <div>
+          <Route exact path='/' component={Welcome}/>
+          <Route exact path='/success' component={Login}/>
+          <Route exact path='/fetch-user-data' component={FetchUserData}/>
+          <Route exact path='/user-results' component={UserResults}/>
+          <Route exact path='/playlists' component={Playlists}/>
+          <Route exact path='/refresh-spotify-data' component={RefreshSpotifyData}/>
+          <Route exact path='/about' component={About}/>
+        </div>
       </Router>
     );
   }

@@ -14,6 +14,12 @@ var Spinner = require('react-spinkit');
 
 class GetTracks extends React.Component {
 
+  componentWillMount() {
+    if (!this.props.isLoggedIn) {
+      this.props.history.push('/')
+    }
+  }
+
   componentDidMount() {
     setTimeout(function(){
       if (!this.props.isLoggedIn) {
