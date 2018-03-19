@@ -1,6 +1,6 @@
 export function addRelatedArtists(user_id,artist_id) {
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
 
@@ -15,7 +15,7 @@ export function addRelatedArtists(user_id,artist_id) {
 
 export function addRelatedArtistsTopTracks(user_id,artist_id) {
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
 
@@ -31,7 +31,7 @@ export function addRelatedArtistsTopTracks(user_id,artist_id) {
 export function addRelatedArtistsAudioFeatures(user_id, tracks) {
   const trackIds = tracks.map(track => track.id)
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
 

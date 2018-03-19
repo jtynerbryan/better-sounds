@@ -42,7 +42,7 @@ export function addPlaylist(playlistName, audioFeature, tracks, userId) {
 
 export function getPlaylists(userId) {
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
 

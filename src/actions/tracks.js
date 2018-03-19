@@ -1,6 +1,6 @@
 export function addTopTracks(id) {
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
   return (dispatch) => {
@@ -14,7 +14,7 @@ export function addTopTracks(id) {
 
 export function addRecentTracks(id) {
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
   return (dispatch) => {

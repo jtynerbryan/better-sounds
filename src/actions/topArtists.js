@@ -1,6 +1,6 @@
 export function addTopArtists(user_id) {
   const body = {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors'
   }
   return (dispatch) => {
