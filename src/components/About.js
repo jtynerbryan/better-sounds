@@ -21,7 +21,6 @@ class About extends React.Component {
                   <List bulleted className='about-list'>
                     <List.Item>Top Artists</List.Item>
                     <List.Item>Top Tracks</List.Item>
-                    <List.Item>Recently Played Tracks</List.Item>
                     <List.Item>Artists Related to your Top Artists</List.Item>
                     <List.Item>Audio Features</List.Item>
                   </List>
@@ -83,7 +82,6 @@ class About extends React.Component {
                   <List bulleted className='about-list'>
                     <List.Item>Top Artists</List.Item>
                     <List.Item>Top Tracks</List.Item>
-                    <List.Item>Recently Played Tracks</List.Item>
                     <List.Item>Artists Related to your Top Artists</List.Item>
                     <List.Item>Audio Features</List.Item>
                   </List>

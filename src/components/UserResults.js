@@ -1,7 +1,6 @@
 import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 import TopTracksList from './TopTracksList'
-import RecentTracksList from './RecentTracksList'
 import LoggedInNavBar from './LoggedInNavBar'
 import PlaylistForm from './PlaylistForm'
 import PlaylistGrid from './PlaylistGrid'
@@ -76,11 +75,8 @@ function mapStateToProps(state) {
     isLoggedIn: state.auth.isLoggedIn,
     user: state.auth.user,
     topTracks: state.tracks.topTracks,
-    recentTracks: state.tracks.recentTracks,
     topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
-    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
-    aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks,
     relatedArtists: state.relatedArtists.relatedArtists,
     relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
     topArtists: state.topArtists.topArtists,

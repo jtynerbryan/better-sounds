@@ -2,12 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addTopTracks } from '../actions/tracks'
-import { addRecentTracks } from '../actions/tracks'
 import { addTopArtists } from '../actions/topArtists'
 import { addTopTracksAudioFeatures } from '../actions/audioFeatures'
-import { addRecentTracksAudioFeatures } from '../actions/audioFeatures'
 import { sumFeaturesOfTopTracks } from '../actions/audioFeatures'
-import { sumFeaturesOfRecentTracks } from '../actions/audioFeatures'
 import { addRelatedArtists } from '../actions/relatedArtists'
 import { getPlaylists } from '../actions/playlists'
 var Spinner = require('react-spinkit');
@@ -28,7 +25,6 @@ class FetchUserData extends React.Component {
     // get user's top tracks and artists
     if (this.props.user.id !== null && this.props.topTracks.length === 0 ) {
       this.props.addTopTracks(this.props.user.id)
-      // this.props.addRecentTracks(this.props.user.id)
       this.props.addTopArtists(this.props.user.id)
     }
 
@@ -71,7 +67,6 @@ function mapDispatchToProps(dispatch) {
       addTopTracks,
       addTopTracksAudioFeatures,
       sumFeaturesOfTopTracks,
-      sumFeaturesOfRecentTracks,
       addRelatedArtists,
       addTopArtists,
       getPlaylists
@@ -83,11 +78,8 @@ function mapStateToProps(state) {
     isLoggedIn: state.auth.isLoggedIn,
     user: state.auth.user,
     topTracks: state.tracks.topTracks,
-    recentTracks: state.tracks.recentTracks,
     topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
-    recentTracksAudioFeatures: state.audioFeatures.recentTracksAudioFeatures,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
-    aggregateFeaturesOfRecentTracks: state.audioFeatures.aggregateFeaturesOfRecentTracks,
     relatedArtists: state.relatedArtists.relatedArtists,
     topArtists: state.topArtists.topArtists,
     relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
