@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux' // if it’s not provider or connect it comes from redux
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import tracksReducer from './reducers/tracksReducer'
 import authReducer from './reducers/authReducer'
 import audioFeaturesReducer from './reducers/audioFeaturesReducer'

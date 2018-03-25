@@ -16,8 +16,6 @@ class Welcome extends React.Component {
           <h2>Analyze your Spotify listening habits</h2>
           <h2>Create playlists of new music tailored to your needs</h2>
           </Container>
-
-
         </div>
       )
     } else {

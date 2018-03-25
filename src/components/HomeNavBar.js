@@ -11,7 +11,6 @@ class HomeNavBar extends Component {
     history: PropTypes.object.isRequired
   }
 
-
   render() {
     return (
       <Segment inverted className="navbar">

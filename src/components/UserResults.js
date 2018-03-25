@@ -15,26 +15,6 @@ import { Button, Grid, Popup } from 'semantic-ui-react'
 
 class UserResults extends React.Component {
 
-  // constructor() {
-  //   super()
-  //
-  //   this.state = {
-  //     toggleOn: false
-  //   }
-  // }
-  //
-  // handleClick = () => {
-  //   if (this.state.toggleOn) {
-  //     this.setState({
-  //       toggleOn: false
-  //     })
-  //   } else {
-  //     this.setState({
-  //       toggleOn: true
-  //     })
-  //   }
-  // }
-
   logout = () => {
     this.props.logoutUser()
     this.props.history.push('/')
@@ -64,20 +44,20 @@ class UserResults extends React.Component {
   }
 
   render() {
-      return (
+    return (
+      <div>
         <div>
-          <div>
-            <LoggedInNavBar />
-            <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
-            <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
-          </div>
-          <div className="tracks">
-            <h1 className="top-tracks-header">Top Tracks</h1>
-            <TopTracksList />
-          </div>
+          <LoggedInNavBar />
+          <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
+          <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
         </div>
-      )
-    }
+        <div className="tracks">
+          <h1 className="top-tracks-header">Top Tracks</h1>
+          <TopTracksList />
+        </div>
+      </div>
+    )
+  }
 }
 
 

@@ -5,16 +5,12 @@ import{ logoutUser } from '../actions/auth'
 import { bindActionCreators } from 'redux'
 
 
-class UserHome extends React.Component {
+class Login extends React.Component {
 
   componentDidMount() {
-    // if (this.props.location.search="?error=access_denied") {
-    //   this.props.history.push('/')
-    // } else {
       const code = this.props.location.search.split("=")[1]
       this.props.authorize(code)
       this.props.history.push("/fetch-user-data")
-    // }
   }
 
   handleClick = () => {
@@ -42,4 +38,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserHome)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

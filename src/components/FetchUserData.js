@@ -12,7 +12,7 @@ import { addRelatedArtists } from '../actions/relatedArtists'
 import { getPlaylists } from '../actions/playlists'
 var Spinner = require('react-spinkit');
 
-class GetTracks extends React.Component {
+class FetchUserData extends React.Component {
 
   componentDidMount() {
     setTimeout(function(){
@@ -23,8 +23,6 @@ class GetTracks extends React.Component {
       }
     }.bind(this), 2500);
   }
-
-  //all actions involving recently played tracks have been commented out until Spotify makes this endpoint available again
 
   componentDidUpdate() {
     // get user's top tracks and artists
@@ -39,20 +37,10 @@ class GetTracks extends React.Component {
       this.props.addTopTracksAudioFeatures(this.props.user.id, this.props.topTracks)
     }
 
-    // get audio features of recent tracks
-    // if (this.props.recentTracks.length > 0 && this.props.recentTracksAudioFeatures.length === 0) {
-    //   this.props.addRecentTracksAudioFeatures(this.props.user.id, this.props.recentTracks)
-    // }
-
     // get aggregate of top tracks audio features by category
     if (this.props.topTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfTopTracks.danceability === 0) {
       this.props.sumFeaturesOfTopTracks(this.props.topTracksAudioFeatures)
     }
-
-    // get aggregate of recent tracks audio features by category
-    // if (this.props.recentTracksAudioFeatures.length > 0 && this.props.aggregateFeaturesOfRecentTracks.danceability === 0) {
-    //   this.props.sumFeaturesOfRecentTracks(this.props.recentTracksAudioFeatures)
-    // }
 
     // get a related artist by random from user's top 5 artists
     if (this.props.topArtists.length > 0 && this.props.relatedArtists.length === 0) {
@@ -81,9 +69,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       addTopTracks,
-      addRecentTracks,
       addTopTracksAudioFeatures,
-      addRecentTracksAudioFeatures,
       sumFeaturesOfTopTracks,
       sumFeaturesOfRecentTracks,
       addRelatedArtists,
@@ -110,4 +96,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GetTracks)
+export default connect(mapStateToProps, mapDispatchToProps)(FetchUserData)
