@@ -3,6 +3,7 @@ import AudioFeaturesChart from './AudioFeaturesChart'
 import TopArtists from './TopArtists'
 import TopTracksList from './TopTracksList'
 import LoggedInNavBar from './LoggedInNavBar'
+import ArtistsFeaturesCarousel from './Carousel'
 import { bindActionCreators } from 'redux'
 import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
@@ -45,9 +46,16 @@ class UserResults extends React.Component {
       <div>
         <div>
           <LoggedInNavBar />
-          <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
-          <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
-          <TopArtists artists={this.props.topArtists}/>
+          <ArtistsFeaturesCarousel slides={[
+            <div>
+              <h2 className='header'>Audio Features from Top Tracks</h2>
+              <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
+            </div>,
+            <div>
+              <h2 className='header'>Top Artists</h2>
+              <TopArtists artists={this.props.topArtists}/>
+            </div>
+          ]}/>
         </div>
         <div className="tracks">
           <h1 className="top-tracks-header">Top Tracks</h1>

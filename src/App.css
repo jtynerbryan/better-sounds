@@ -107,6 +107,7 @@ button.ui.button {
 .tracks {
   background-color: #212121;
   text-align: center;
+  margin-top: 50px;
 }
 
 .playlist {

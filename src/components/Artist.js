@@ -7,7 +7,7 @@ class Artist extends React.Component {
     return (
       <div>
         <Grid.Column>
-          <Modal trigger={<img className='scale'src={this.props.artist.images[0].url} style={{height: 250, width: 250, margin: '6px'}} />}>
+          <Modal trigger={<img className='scale'src={this.props.artist.images[0].url} style={{height: 250, width: 250, margin: '3px'}} alt={this.props.artist.name} />}>
             <Modal.Header>{this.props.artist.name}</Modal.Header>
           </Modal>
         </Grid.Column>
