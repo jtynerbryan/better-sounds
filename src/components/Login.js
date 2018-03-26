@@ -8,9 +8,9 @@ import { bindActionCreators } from 'redux'
 class Login extends React.Component {
 
   componentDidMount() {
-      const code = this.props.location.search.split("=")[1]
-      this.props.authorize(code)
-      this.props.history.push("/fetch-user-data")
+    const code = this.props.location.search.split("=")[1]
+    this.props.authorize(code)
+    this.props.history.push("/fetch-user-data")
   }
 
   handleClick = () => {

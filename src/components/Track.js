@@ -18,28 +18,24 @@ class Track extends React.Component {
     return (
       <div>
         <div>
-        <Grid.Column>
-
-        <Modal trigger={<Image className='scale'src={this.props.song.info.album.images[1].url} size='medium' verticalAlign='middle' />}>
-          <Modal.Header>{this.props.song.info.name} by {this.props.song.info.artists[0].name}</Modal.Header>
-          <Modal.Content image scrolling>
-            <Image
-              size='large'
-              src={this.props.song.info.album.images[1].url}
-              wrapped
-            />
-
-            <Modal.Description>
-              <Header>Audio Features</Header>
-            </Modal.Description>
-            <AudioFeaturesChart chartData={chartData} style={{ paddingBottom: 5 }}/>
-          </Modal.Content>
-          <Modal.Actions>
-          </Modal.Actions>
-        </Modal>
-
-
-        </Grid.Column>
+          <Grid.Column>
+            <Modal trigger={<Image className='scale'src={this.props.song.info.album.images[1].url} size='medium' verticalAlign='middle' />}>
+              <Modal.Header>{this.props.song.info.name} by {this.props.song.info.artists[0].name}</Modal.Header>
+              <Modal.Content image scrolling>
+                <Image
+                  size='large'
+                  src={this.props.song.info.album.images[1].url}
+                  wrapped
+                />
+                <Modal.Description>
+                  <Header>Audio Features</Header>
+                </Modal.Description>
+                <AudioFeaturesChart chartData={chartData} style={{ paddingBottom: 5 }}/>
+              </Modal.Content>
+              <Modal.Actions>
+              </Modal.Actions>
+            </Modal>
+          </Grid.Column>
         </div>
       </div>
     )
