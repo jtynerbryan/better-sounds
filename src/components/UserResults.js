@@ -1,16 +1,15 @@
 import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
+import TopArtists from './TopArtists'
 import TopTracksList from './TopTracksList'
 import LoggedInNavBar from './LoggedInNavBar'
-import PlaylistForm from './PlaylistForm'
-import PlaylistGrid from './PlaylistGrid'
+import ArtistsFeaturesCarousel from './Carousel'
 import { bindActionCreators } from 'redux'
 import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/auth'
-import { Button, Grid, Popup } from 'semantic-ui-react'
 
 class UserResults extends React.Component {
 
@@ -47,8 +46,16 @@ class UserResults extends React.Component {
       <div>
         <div>
           <LoggedInNavBar />
-          <h2 className='header'>Aggregate Audio Features from Top Tracks</h2>
-          <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
+          <ArtistsFeaturesCarousel slides={[
+            <div>
+              <h2 className='chart-header' style={{marginTop: '30px'}}>Audio Features from Top Tracks</h2>
+              <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
+            </div>,
+            <div style={{marginBottom: '500px'}}>
+              <h2 className='artist-header' style={{marginTop: '30px'}}>Top Artists</h2>
+              <TopArtists artists={this.props.topArtists}/>
+            </div>
+          ]}/>
         </div>
         <div className="tracks">
           <h1 className="top-tracks-header">Top Tracks</h1>

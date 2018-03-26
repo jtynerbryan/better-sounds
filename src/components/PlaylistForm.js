@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { addPlaylist } from '../actions/playlists'
 import { clearAllRelatedArtistsData } from '../actions/relatedArtists'
-import { Form, Header, Message, Modal, Button } from 'semantic-ui-react'
+import { Form, Modal, Button } from 'semantic-ui-react'
 
 
 class PlaylistForm extends React.Component {

@@ -82,6 +82,15 @@ div.column {
   text-align: center;
   margin-top: 40px;
   color: #212121;
+  font-family: 'Roboto', sans-serif;
+}
+
+.chart-header, .artist-header {
+  text-align: center;
+  color: #212121;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  margin-top: 40px;
 }
 
 .ui.message {
@@ -107,6 +116,7 @@ button.ui.button {
 .tracks {
   background-color: #212121;
   text-align: center;
+  margin-top: 50px;
 }
 
 .playlist {
@@ -179,6 +189,8 @@ div h2.header {
 }
 
 .top-tracks-header {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
   padding-top: 15px;
   color: #FAFAFA;
 }
@@ -195,6 +207,11 @@ div h2.header {
 
 .button.ui.button.nav-popup {
   float: right;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
 }
 
 .playlist .ui.centered.grid .four.column.row div.column {
