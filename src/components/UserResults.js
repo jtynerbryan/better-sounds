@@ -72,6 +72,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
+    user: state.auth.user,
     isLoggedIn: state.auth.isLoggedIn,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
     relatedArtists: state.relatedArtists.relatedArtists,
