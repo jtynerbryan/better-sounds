@@ -17,7 +17,7 @@ class App extends Component {
         <Route exact path='/loading' component={FetchUserData}/>
         <Route exact path='/listening-profile' component={UserResults}/>
         <Route exact path='/playlists' component={Playlists}/>
-        <Route exact path='/refresh-spotify-data' component={RefreshSpotifyData}/>
+        <Route exact path='/re-loading' component={RefreshSpotifyData}/>
       </div>
     );
   }

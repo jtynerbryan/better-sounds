@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Modal, Header, Grid } from 'semantic-ui-react'
+import { Image, Modal, Grid } from 'semantic-ui-react'
 
 class Artist extends React.Component {
 

@@ -12,7 +12,7 @@ class Playlists extends React.Component {
       return (
         <div className="playlist">
           <LoggedInNavBar />
-          <h1>Playlists</h1>
+          <h1 style={{fontFamily: 'Roboto, sans-serif', fontStyle: 'italic'}}>Playlists</h1>
           <PlaylistForm/>
           <PlaylistGrid/>
         </div>

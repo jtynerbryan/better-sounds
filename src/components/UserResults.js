@@ -9,14 +9,8 @@ import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
 import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
 import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
 import { connect } from 'react-redux'
-import { logoutUser } from '../actions/auth'
 
 class UserResults extends React.Component {
-
-  logout = () => {
-    this.props.logoutUser()
-    this.props.history.push('/')
-  }
 
   componentWillMount() {
     if (!this.props.isLoggedIn) {
@@ -70,7 +64,6 @@ class UserResults extends React.Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      logoutUser,
       addRelatedArtistsTopTracks,
       addRelatedArtistsAudioFeatures,
       mapRelatedArtistsFeaturesToTracks
@@ -80,16 +73,12 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     isLoggedIn: state.auth.isLoggedIn,
-    user: state.auth.user,
-    topTracks: state.tracks.topTracks,
-    topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
     aggregateFeaturesOfTopTracks: state.audioFeatures.aggregateFeaturesOfTopTracks,
     relatedArtists: state.relatedArtists.relatedArtists,
     relatedArtistsAudioFeatures: state.relatedArtists.relatedArtistsAudioFeatures,
     topArtists: state.topArtists.topArtists,
     relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
     relatedArtistsTracksWithFeatures: state.relatedArtists.tracksWithFeatures,
-    playlists: state.playlists.playlists
   }
 }
 

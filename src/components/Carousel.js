@@ -4,7 +4,6 @@ import Carousel from 'nuka-carousel';
 class ArtistsFeaturesCarousel extends React.Component {
 
   render() {
-
     const slides = this.props.slides.map((slide, index) => {
       return (
         <div key={index}>
@@ -16,6 +15,7 @@ class ArtistsFeaturesCarousel extends React.Component {
     const settings = {
       autoplay: false
     }
+
     return (
       <Carousel {...settings} style={{marginBottom: '-40px'}}>
         {slides}

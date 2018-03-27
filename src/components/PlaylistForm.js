@@ -13,6 +13,12 @@ class PlaylistForm extends React.Component {
     playlistTitle: ''
   }
 
+  componentWillMount() {
+    if (!this.props.isLoggedIn) {
+      this.props.history.push('/')
+    }
+  }
+
   handleChange = (e, { value }) => this.setState({ value })
 
   handleTitle = (e) => {
@@ -28,20 +34,14 @@ class PlaylistForm extends React.Component {
     } else {
       this.props.addPlaylist(this.state.playlistTitle, this.state.value, this.props.relatedArtistsTracksWithFeatures, this.props.user.id)
       this.props.clearAllRelatedArtistsData()
-      this.props.history.push('/refresh-spotify-data')
-    }
-  }
-
-  componentWillMount() {
-    if (!this.props.isLoggedIn) {
-      this.props.history.push('/')
+      this.props.history.push('/re-loading')
     }
   }
 
   render() {
     const { value } = this.state
     return (
-      <Modal trigger={<Button>Create a Playlist</Button>}>
+      <Modal trigger={<Button style={{fontFamily: 'Roboto, sans-serif'}}>Create a Playlist</Button>}>
         <Modal.Header>Create your own Playlist</Modal.Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths='equal'>
