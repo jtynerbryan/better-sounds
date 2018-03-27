@@ -269,8 +269,16 @@ div.four.column.row.artists-container {
   }
 
   .artist-modal {
-    height: 180px;
-    width: 180px;
+    height: 190px;
+    width: 190px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1154px) {
+  .artist-modal {
+    height: 190px;
+    width: 190px;
     margin-top: 20px;
   }
 }
