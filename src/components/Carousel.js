@@ -12,8 +12,12 @@ class ArtistsFeaturesCarousel extends React.Component {
         </div>
       )
     })
+
+    const settings = {
+      autoplay: false
+    }
     return (
-      <Carousel autoplay={true}>
+      <Carousel {...settings} style={{marginBottom: '-40px'}}>
         {slides}
       </Carousel>
     )

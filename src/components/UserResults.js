@@ -47,13 +47,13 @@ class UserResults extends React.Component {
         <div>
           <LoggedInNavBar />
           <ArtistsFeaturesCarousel slides={[
-            <div>
+            <div className='chart-container'>
               <h2 className='chart-header' style={{marginTop: '30px'}}>Audio Features from Top Tracks</h2>
               <AudioFeaturesChart classname='big-chart' chartData={Object.values(this.props.aggregateFeaturesOfTopTracks).map(val => val * 2)} />
             </div>,
-            <div style={{marginBottom: '500px'}}>
+            <div >
               <h2 className='artist-header' style={{marginTop: '30px'}}>Top Artists</h2>
-              <TopArtists artists={this.props.topArtists}/>
+              <TopArtists artists={this.props.topArtists} />
             </div>
           ]}/>
         </div>

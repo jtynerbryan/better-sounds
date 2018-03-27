@@ -8,11 +8,11 @@ const TopArtists = (props) => {
         <Artist key={index} artist={artist}/>
       )
     })
-    console.log(props);
+
     return (
       <div>
         <Grid centered>
-          <Grid.Row columns={4} style={{marginTop: 0}}>
+          <Grid.Row columns={4} className='artists-container' >
             {artists}
           </Grid.Row>
         </Grid>

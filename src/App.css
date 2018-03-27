@@ -222,12 +222,56 @@ iframe {
   margin: 10px;
 }
 
+.artist-modal {
+  height: 225px;
+  width: 225px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+div.four.column.row.artists-container {
+  margin-top: 20px;
+}
+
+.chart-container {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 1304px) {
+  .artist-modal {
+    height: 215px;
+    width: 215px;
+  }
+
+  div.four.column.row.artists-container {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 1298px) {
+  .artist-modal {
+    height: 200px;
+    width: 200px;
+  }
+
+  div.four.column.row.artists-container {
+    margin-top: 40px;
+  }
+}
+
 @media (max-width: 1198px) {
   .welcome {
     background-image: url("./headphones-2557583_1920.jpg");
     background-size: 120%;
     background-repeat: no-repeat;
     height: 100vh;
+  }
+
+  .artist-modal {
+    height: 180px;
+    width: 180px;
+    margin-top: 20px;
   }
 }
 

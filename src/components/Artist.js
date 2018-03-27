@@ -7,7 +7,7 @@ class Artist extends React.Component {
     return (
       <div style={{fontFamily: 'Roboto, sans-serif'}}>
         <Grid.Column>
-          <Modal trigger={<img className='scale'src={this.props.artist.images[0].url} style={{height: 230, width: 230, marginLeft: '10px', marginRight: '10px', borderRadius: '10px'}} alt={this.props.artist.name} />}>
+          <Modal trigger={<img className='scale artist-modal'src={this.props.artist.images[0].url} alt={this.props.artist.name} />}>
             <Modal.Header style={{fontFamily: 'Roboto, sans-serif'}}>{this.props.artist.name}</Modal.Header>
             <Modal.Content image scrolling>
               <Image
