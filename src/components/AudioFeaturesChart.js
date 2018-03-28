@@ -1,6 +1,5 @@
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
-import { connect } from 'react-redux'
 
 class AudioFeaturesChart extends React.Component {
 
@@ -15,22 +14,16 @@ class AudioFeaturesChart extends React.Component {
         }
       ]
     }
-      return (
-        <div className='chart'>
+    return (
+      <div className='chart'>
         <Doughnut data={data} width={650}
         height={500}
         options={{
           maintainAspectRatio: false
         }}/>
       </div>
-      )
+    )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.auth.user
-  }
-}
-
-export default connect(mapStateToProps, null)(AudioFeaturesChart)
+export default AudioFeaturesChart
