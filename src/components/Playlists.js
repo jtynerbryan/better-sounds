@@ -14,7 +14,7 @@ class Playlists extends React.Component {
         <div className="playlist">
           <LoggedInNavBar />
           <h1 style={{fontFamily: 'Roboto, sans-serif', fontStyle: 'italic'}}>Playlists</h1>
-          <NewPlaylistForm />
+          <PlaylistForm />
           <PlaylistGrid/>
         </div>
       )

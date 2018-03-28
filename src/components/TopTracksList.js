@@ -6,14 +6,11 @@ import { Grid } from 'semantic-ui-react'
 class TopTracksList extends React.Component {
 
   render() {
-    const mapTracksToFeatures = []
-    this.props.topTracks.map(track => {
+    const mapTracksToFeatures = this.props.topTracks.map(track => {
       let attributes = this.props.topTracksAudioFeatures.filter(features => features.id === track.id)
-      mapTracksToFeatures.push( {
-        info: track,
-        attributes: attributes
-      })
+      return { info: track, attributes: attributes }
     })
+
     return (
       <div>
       <Grid centered>
