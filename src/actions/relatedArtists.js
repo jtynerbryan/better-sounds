@@ -46,18 +46,17 @@ export function addRelatedArtistsAudioFeatures(user_id, tracks) {
 }
 
 export function mapRelatedArtistsFeaturesToTracks(tracks, features) {
-  const mapTracksToFeatures = []
-  tracks.map(track => {
+  const mapFeaturesToTracks = tracks.map(track => {
     let attributes = features.filter(features => features.id === track.id)
-    mapTracksToFeatures.push( {
+    return {
       track: track,
       features: attributes
-    })
+    }
   })
 
   return (dispatch) => {
     dispatch({
-      type: 'MAP_FEATURES_TO_TRACKS', payload: mapTracksToFeatures
+      type: 'MAP_FEATURES_TO_TRACKS', payload: mapFeaturesToTracks
     })
   }
 }

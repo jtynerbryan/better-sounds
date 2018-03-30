@@ -12,27 +12,20 @@ export function addTopTracksAudioFeatures(id, tracks) {
       dispatch({type: "ADD_TOP_TRACKS_AUDIO_FEATURES", payload: res.features.audio_features})
     })
   }
-
 }
 
+// reduce top tracks audio features to create AudioFeaturesChart
 export function sumFeaturesOfTopTracks(tracksFeatures) {
-  const aggregate = {
-    danceability: 0,
-    energy: 0,
-    speechiness: 0,
-    acousticness: 0,
-    instrumentalness: 0,
-    liveness: 0,
-    valence: 0
-  }
-  tracksFeatures.map(track => {
-    aggregate.danceability += track.danceability
-    aggregate.energy += track.energy
-    aggregate.speechiness += track.speechiness
-    aggregate.acousticness += track.acousticness
-    aggregate.instrumentalness += track.instrumentalness
-    aggregate.liveness += track.liveness
-    aggregate.valence += track.valence
+  const aggregate = tracksFeatures.reduce((a, b) => {
+    return {
+      danceability: a.danceability + b.danceability,
+      energy: a.energy + b.energy,
+      speechiness: a.speechiness + b.speechiness,
+      acousticness: a.acousticness + b.acousticness,
+      instrumentalness: a.instrumentalness + b.instrumentalness,
+      liveness: a.liveness + b.liveness,
+      valence: a.valence + b.valence
+    }
   })
 
   return (dispatch) => {

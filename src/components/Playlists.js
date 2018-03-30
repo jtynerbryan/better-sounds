@@ -3,17 +3,20 @@ import PlaylistForm from './PlaylistForm'
 import PlaylistGrid from './PlaylistGrid'
 import LoggedInNavBar from './LoggedInNavBar'
 import { connect } from 'react-redux'
+import { Modal, Button } from 'semantic-ui-react'
 
 class Playlists extends React.Component {
 
   render() {
-
     if (this.props.playlists.length > 0) {
       return (
         <div className="playlist">
           <LoggedInNavBar />
           <h1 style={{fontFamily: 'Roboto, sans-serif', fontStyle: 'italic'}}>Playlists</h1>
-          <PlaylistForm />
+          <Modal style={{backgroundColor: '#FAFAFA'}} trigger={<Button style={{fontFamily: 'Roboto, sans-serif'}}>Create a Playlist</Button>}>
+            <Modal.Header style={{backgroundColor: '#1b1c1d', color: '#fff', borderRadius: 0}} >New Playlist</Modal.Header>
+            <PlaylistForm />
+          </Modal>
           <PlaylistGrid/>
         </div>
       )
@@ -21,15 +24,13 @@ class Playlists extends React.Component {
       return (
         <div className="empty-playlist">
           <LoggedInNavBar />
-          <h1>Playlists</h1>
+          <h1 style={{fontFamily: 'Roboto, sans-serif', fontStyle: 'italic'}}>Playlists</h1>
+          <h3>You haven't created any playlists yet</h3>
           <PlaylistForm/>
-          <PlaylistGrid/>
         </div>
       )
     }
-
   }
-
 }
 
 function mapStateToProps(state) {
