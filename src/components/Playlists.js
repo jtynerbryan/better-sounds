@@ -1,6 +1,5 @@
 import React from 'react'
 import PlaylistForm from './PlaylistForm'
-import NewPlaylistForm from './NewPlaylistForm'
 import PlaylistGrid from './PlaylistGrid'
 import LoggedInNavBar from './LoggedInNavBar'
 import { connect } from 'react-redux'

@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { addPlaylist } from '../actions/playlists'
 import { clearAllRelatedArtistsData } from '../actions/relatedArtists'
-import { Form, Modal, Button } from 'semantic-ui-react'
+import { Form, Modal, Button, Select } from 'semantic-ui-react'
 
+const audioFeatures = ['Acousticness', 'Danceability', 'Energy', 'Instrumentalness', 'Liveness', 'Speechiness', 'Valence']
 
 class PlaylistForm extends React.Component {
 
@@ -39,26 +40,21 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
-    const { value } = this.state
+    const audioFeatureOptions = audioFeatures.map(feature => {
+      return { text: feature, value: feature }
+    })
+
     return (
-      <Modal trigger={<Button style={{fontFamily: 'Roboto, sans-serif'}}>Create a Playlist</Button>}>
-        <Modal.Header>Create your own Playlist</Modal.Header>
+      <Modal style={{backgroundColor: '#FAFAFA'}} trigger={<Button style={{fontFamily: 'Roboto, sans-serif'}}>Create a Playlist</Button>}>
+        <Modal.Header style={{backgroundColor: '#1b1c1d', color: '#fff', borderRadius: 0}} >New Playlist</Modal.Header>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group widths='equal'>
-            <Form.Input placeholder='My Playlist' onChange={this.handleTitle} />
+          <Form.Group widths='equal' style={{width: '40%', margin: 'auto', marginTop: '20px'}} >
+            <Form.Input placeholder='My Playlist' label='Playlist Name' onChange={this.handleTitle} />
           </Form.Group>
-          <Form.Group>
-            <span>
-            <label>Select an audio feature to appear prominently in your playlist</label>
-            <Form.Radio label='Danceablity' value='danceability' checked={value === 'danceability'} onChange={this.handleChange} />
-            <Form.Radio label='Energy' value='energy' checked={value === 'energy'} onChange={this.handleChange} />
-            <Form.Radio label='Acousticness' value='acousticness' checked={value === 'acousticness'} onChange={this.handleChange} />
-            <Form.Radio label='Instrumentalness' value='instrumentalness' checked={value === 'instrumentalness'} onChange={this.handleChange} />
-            <Form.Radio label='Liveness' value='liveness' checked={value === 'liveness'} onChange={this.handleChange} />
-            <Form.Radio label='Valence' value='valence' checked={value === 'valence'} onChange={this.handleChange} />
-            </span>
+          <Form.Group widths='equal' style={{width: '50%', margin: 'auto', marginTop: '20px'}}>
+            <Form.Input control={Select} options={audioFeatureOptions} label='Select an audio feature to appear prominently in your playlist' onChange={this.handleChange} />
           </Form.Group>
-          <Form.Button id='submit-button'>Submit</Form.Button>
+          <Form.Button id='submit-button' style={{marginTop: '20px'}}>Submit</Form.Button>
         </Form>
       </Modal>
     )
