@@ -1,7 +1,7 @@
 import React from 'react'
 import PlaylistForm from './PlaylistForm'
 import PlaylistGrid from './PlaylistGrid'
-import LoggedInNavBar from './LoggedInNavBar'
+import LoggedInNavBar from './NavBars/LoggedInNavBar'
 import { connect } from 'react-redux'
 import { Modal, Button } from 'semantic-ui-react'
 

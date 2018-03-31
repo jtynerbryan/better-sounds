@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 import { Menu, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { logoutUser } from '../actions/auth'
+import { logoutUser }  from '../../actions/auth'
 
 class LoggedInNavBar extends Component {
 

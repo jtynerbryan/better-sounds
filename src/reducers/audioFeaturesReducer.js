@@ -17,10 +17,10 @@ function audioFeaturesReducer(state = {
         topTracksAudioFeatures: topFeatures
       })
     case 'SET_AGGREGATE_FEATURES_FOR_TOP_TRACKS':
-        const aggregateTopFeatures = action.payload
-        return Object.assign({}, state, {
-          aggregateFeaturesOfTopTracks: aggregateTopFeatures
-        })
+      const aggregateTopFeatures = action.payload
+      return Object.assign({}, state, {
+        aggregateFeaturesOfTopTracks: aggregateTopFeatures
+      })
     default:
       return state
   }
