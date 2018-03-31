@@ -3,10 +3,10 @@ import { Route } from 'react-router-dom'
 import './App.css';
 import Login from './components/Login'
 import Welcome from './components/Welcome'
-import FetchUserData from './components/FetchUserData'
+import FetchUserData from './components/Loaders/FetchUserData'
 import UserResults from './components/UserResults'
-import RefreshSpotifyData from './components/RefreshSpotifyData'
-import Playlists from './components/Playlists'
+import RefreshSpotifyData from './components/Loaders/RefreshSpotifyData'
+import Playlists from './components/Playlists/Playlists'
 
 class App extends Component {
   render() {

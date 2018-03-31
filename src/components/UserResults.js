@@ -19,6 +19,7 @@ class UserResults extends React.Component {
   }
 
   componentDidMount() {
+    // fetch relatedArtistsTopTracks for playlist creation later
     if (this.props.relatedArtistsTopTracks.length === 0 && this.props.relatedArtistsAudioFeatures.length === 0) {
       const topEightRelatedArtists = this.props.relatedArtists.slice(0, 8)
       topEightRelatedArtists.map(artist => this.props.addRelatedArtistsTopTracks(this.props.user.id, artist.id))
@@ -26,10 +27,12 @@ class UserResults extends React.Component {
   }
 
   componentDidUpdate() {
+    // fetch relatedArtistsAudioFeatures using trackIds fetched in componentDidMount()
     if (this.props.relatedArtistsTopTracks.length === 80 && this.props.relatedArtistsAudioFeatures.length === 0) {
       this.props.addRelatedArtistsAudioFeatures(this.props.user.id, this.props.relatedArtistsTopTracks)
     }
 
+    // map relatedArtists' audioFeatures to tracks for filtering after playlist form submission
     if (this.props.relatedArtistsAudioFeatures.length > 0 && this.props.relatedArtistsTracksWithFeatures.length === 0) {
       this.props.mapRelatedArtistsFeaturesToTracks(this.props.relatedArtistsTopTracks, this.props.relatedArtistsAudioFeatures)
     }

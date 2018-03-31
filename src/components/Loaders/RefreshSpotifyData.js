@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addRelatedArtists } from '../actions/relatedArtists'
-import { addRelatedArtistsTopTracks } from '../actions/relatedArtists'
-import { addRelatedArtistsAudioFeatures } from '../actions/relatedArtists'
-import { mapRelatedArtistsFeaturesToTracks } from '../actions/relatedArtists'
+import { addRelatedArtists } from '../../actions/relatedArtists'
+import { addRelatedArtistsTopTracks } from '../../actions/relatedArtists'
+import { addRelatedArtistsAudioFeatures } from '../../actions/relatedArtists'
+import { mapRelatedArtistsFeaturesToTracks } from '../../actions/relatedArtists'
 var Spinner = require('react-spinkit');
 
 
