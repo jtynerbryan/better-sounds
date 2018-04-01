@@ -56,7 +56,7 @@ class UserResults extends React.Component {
         </div>
         <div className="tracks">
           <h1 className="top-tracks-header">Top Tracks</h1>
-          <TopTracksList />
+          <TopTracksList topTracks={this.props.topTracks} topTracksAudioFeatures={this.props.topTracksAudioFeatures} />
         </div>
       </div>
     )
@@ -83,6 +83,8 @@ function mapStateToProps(state) {
     topArtists: state.topArtists.topArtists,
     relatedArtistsTopTracks: state.relatedArtists.relatedArtistsTopTracks,
     relatedArtistsTracksWithFeatures: state.relatedArtists.tracksWithFeatures,
+    topTracks: state.tracks.topTracks,
+    topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures
   }
 }
 
