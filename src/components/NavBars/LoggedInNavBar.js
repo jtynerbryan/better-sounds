@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import { Menu, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
@@ -7,12 +6,6 @@ import { bindActionCreators } from 'redux'
 import { logoutUser }  from '../../actions/auth'
 
 class LoggedInNavBar extends Component {
-
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
-  }
 
   logoutUser = () => {
     this.props.history.push('/')
@@ -26,9 +19,9 @@ class LoggedInNavBar extends Component {
           <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
           <Menu.Item name='Listening Profile' onClick={ () => this.props.history.push('/listening-profile')}/>
           <Menu.Item name='Playlists' onClick={ () => this.props.history.push('/playlists')}/>
-          <a href={this.props.user.spotify_url}  target="_blank"><Menu.Item name={this.props.user.username} /></a>
+          <a href={this.props.user.spotify_url}  target="_blank"><Menu.Item name='Spotify Web Player' /></a>
           <Menu.Item name='Logout' onClick={this.logoutUser}/>
-          <Menu.Item position="right" name='GitHub' href='http://github.com/jtynerbryan' target="_blank"/>
+          <Menu.Item position="right" name='GitHub' href='https://github.com/jtynerbryan' target="_blank"/>
         </Menu>
       </Segment>
     )

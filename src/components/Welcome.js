@@ -36,9 +36,7 @@ class Welcome extends React.Component {
 function mapStateToProps(state) {
   return {
     isLoggedIn: state.auth.isLoggedIn,
-    user: state.auth.user,
-    topTracks: state.tracks.topTracks,
-    topTracksAudioFeatures: state.audioFeatures.topTracksAudioFeatures,
+    user: state.auth.user
   }
 }
 

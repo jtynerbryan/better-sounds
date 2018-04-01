@@ -1,21 +1,15 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { authorize } from '../actions/auth'
-import{ logoutUser } from '../actions/auth'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 
 class Login extends React.Component {
 
   componentDidMount() {
+    console.log('login');
     const code = this.props.location.search.split("=")[1]
     this.props.authorize(code)
     this.props.history.push("/loading")
-  }
-
-  handleClick = () => {
-    this.props.logoutUser()
-    this.props.history.push("/")
   }
 
   render() {
@@ -28,14 +22,7 @@ class Login extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({authorize, logoutUser}, dispatch)
+  return bindActionCreators({ authorize }, dispatch)
 }
 
-function mapStateToProps(state) {
-  return {
-    isLoggedIn: state.auth.isLoggedIn,
-    user: state.auth.user
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login)
