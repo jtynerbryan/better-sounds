@@ -1,6 +1,6 @@
 import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
-import TopArtists from './TopArtists'
+import TopArtists from './Artists/TopArtists'
 import TopTracksList from './TopTracksList'
 import LoggedInNavBar from './NavBars/LoggedInNavBar'
 import ArtistsFeaturesCarousel from './Carousel'

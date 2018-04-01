@@ -3,7 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import Artist from './Artist';
 
 const TopArtists = (props) => {
-    let artists = props.artists.map((artist, index) => {
+    const artists = props.artists.map((artist, index) => {
       return (
         <Artist key={index} artist={artist}/>
       )
