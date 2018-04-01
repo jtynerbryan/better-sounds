@@ -19,7 +19,7 @@ class LoggedInNavBar extends Component {
           <Menu.Item name='Home' onClick={() => this.props.history.push('/')} />
           <Menu.Item name='Listening Profile' onClick={ () => this.props.history.push('/listening-profile')}/>
           <Menu.Item name='Playlists' onClick={ () => this.props.history.push('/playlists')}/>
-          <a href={this.props.user.spotify_url}  target="_blank"><Menu.Item name='Spotify Web Player' /></a>
+          <Menu.Item name='Spotify Web Player' href={this.props.user.spotify_url} target='_blank' />
           <Menu.Item name='Logout' onClick={this.logoutUser}/>
           <Menu.Item position="right" name='GitHub' href='https://github.com/jtynerbryan' target="_blank"/>
         </Menu>
