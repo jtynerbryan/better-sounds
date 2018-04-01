@@ -6,8 +6,8 @@ const Artist = (props) => {
     <div style={{fontFamily: 'Roboto, sans-serif'}}>
       <Grid.Column>
         <Modal trigger={<img className='scale artist-modal'src={props.artist.images[0].url} alt={props.artist.name} />}>
-          <Modal.Header style={{ fontFamily: 'Roboto, sans-serif', backgroundColor: '#1b1c1d', color: '#fff', borderRadius: 0 }}>{props.artist.name}</Modal.Header>
-          <Modal.Content image scrolling style={{ borderRadius: '3px' }}>
+          <Modal.Header style={{ fontFamily: 'Roboto, sans-serif' }}>{props.artist.name}</Modal.Header>
+          <Modal.Content image scrolling>
             <Image size='medium' src={props.artist.images[0].url} wrapped />
             <Modal.Description>
               <h3>Followers: {props.artist.followers.total}</h3>

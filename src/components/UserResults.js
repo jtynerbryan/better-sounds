@@ -1,7 +1,7 @@
 import React from 'react'
 import AudioFeaturesChart from './AudioFeaturesChart'
 import TopArtists from './Artists/TopArtists'
-import TopTracksList from './TopTracksList'
+import TopTracksList from './Tracks/TopTracksList'
 import LoggedInNavBar from './NavBars/LoggedInNavBar'
 import ArtistsFeaturesCarousel from './Carousel'
 import { bindActionCreators } from 'redux'

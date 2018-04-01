@@ -7,7 +7,7 @@ class TopTracksList extends React.Component {
 
   render() {
     const mapTracksToFeatures = this.props.topTracks.map(track => {
-      let attributes = this.props.topTracksAudioFeatures.filter(features => features.id === track.id)
+      const attributes = this.props.topTracksAudioFeatures.filter(features => features.id === track.id)
       return { info: track, attributes: attributes }
     })
 
