@@ -11,5 +11,6 @@
 * New playlists feature a specific audio feature prominently, as selected by Users
 * Embedded Spotify player allows users to listen to newly created playlists directly on the page 
 * Redux provides persistent state across all app pages
+* [redux-localstorage](https://github.com/elgerlambert/redux-localstorage) copies Redux store into localstorage and re-hydrates Redux store on User page refresh. This minimizes Rails API requests and avoids rate-limiting issues with Spotify's API 
 ## Architecture
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
