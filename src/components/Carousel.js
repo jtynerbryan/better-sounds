@@ -2,33 +2,20 @@ import React from 'react';
 import Carousel from 'nuka-carousel';
 
 class ArtistsFeaturesCarousel extends React.Component {
-
   componentDidMount() {
     // solves nuka carousel bug where height of carousel is sometimes incorrect
     setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('resize'));
     }, 0);
   }
 
   render() {
     const slides = this.props.slides.map((slide, index) => {
-      return (
-        <div key={index}>
-          {slide}
-        </div>
-      )
-    })
+      return <div key={index}>{slide}</div>;
+    });
 
-    const settings = {
-      autoplay: false
-    }
-
-    return (
-      <Carousel {...settings} style={{marginBottom: '-40px'}}>
-        {slides}
-      </Carousel>
-    )
+    return <Carousel style={{ marginBottom: '-40px' }}>{slides}</Carousel>;
   }
 }
 
-export default ArtistsFeaturesCarousel
+export default ArtistsFeaturesCarousel;

@@ -1,24 +1,26 @@
-import React from 'react'
-import { Image, Modal, Grid } from 'semantic-ui-react'
+import React from 'react';
+import { Image, Modal, Grid } from 'semantic-ui-react';
 
 const Artist = (props) => {
   return (
-    <div style={{fontFamily: 'Roboto, sans-serif'}}>
+    <div style={{ fontFamily: 'Roboto, sans-serif' }}>
       <Grid.Column>
-        <Modal trigger={<img className='scale artist-modal'src={props.artist.images[0].url} alt={props.artist.name} />}>
+        <Modal trigger={<img className="scale artist-modal" src={props.artist.images[0].url} alt={props.artist.name} />}>
           <Modal.Header style={{ fontFamily: 'Roboto, sans-serif' }}>{props.artist.name}</Modal.Header>
           <Modal.Content image scrolling>
-            <Image size='medium' src={props.artist.images[0].url} wrapped />
+            <Image size="medium" src={props.artist.images[0].url} wrapped />
             <Modal.Description>
               <h3>Followers: {props.artist.followers.total}</h3>
               <h3>Genres: {props.artist.genres.join(', ')}</h3>
-              <a href={props.artist.external_urls.spotify} target="_blank"><h3>Spotify Profile</h3></a>
+              <a href={props.artist.external_urls.spotify} target="_blank">
+                <h3>Spotify Profile</h3>
+              </a>
             </Modal.Description>
           </Modal.Content>
         </Modal>
       </Grid.Column>
     </div>
-  )
-}
+  );
+};
 
-export default Artist
+export default Artist;
